@@ -1,0 +1,150 @@
+@media (min-width: 768px) and (max-width: 1199px){
+
+    .mobile-topbar{
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+  height: 10px !important;  
+  box-shadow: none !important;
+}
+
+
+.mobile-logo img{ height: 120px; width: auto; }
+
+.mobile-menu-btn{
+    left: 14px;
+    top: 100px;
+    width: 80px;
+    height: 80px;
+  }
+
+    .mobile-login{
+    left: 18px;
+    top: 14px;
+    padding: 16px 22px;
+    font-size: 15px;
+  }
+
+  .mobile-topbar .lang-current{
+    padding: 16px 24px !important;
+    font-size: 15px !important;
+    height: 50px !important;
+  }
+
+    .mobile-topbar .lang-flag{
+    width: 21px !important;
+    height: 21px !important;
+  }
+
+    .lang-code{
+    font-size: 16px;
+  }
+
+  
+  body.page-detail_modeling .left-rail{
+    display: none !important;
+  }
+
+  /* wrapper */
+  body.page-detail_modeling .detail-page{
+    padding-top: 120px !important;
+    padding-bottom: 100px !important;
+  }
+
+  /* HERO */
+  body.page-detail_modeling .detail-hero{
+    padding-left: var(--pad) !important;
+    padding-right: var(--pad) !important;
+  }
+
+  body.page-detail_modeling .detail-title{
+    margin: 10px 0 36px !important;
+    font-size: 56px !important;
+    line-height: 1.06 !important;
+  }
+
+  /* imagem grande */
+  body.page-detail_modeling .detail-hero-image{
+    padding-left: var(--pad) !important;
+    padding-right: var(--pad) !important;
+    margin-bottom: 80px !important;
+    padding-top: 10px !important;
+  }
+
+  body.page-detail_modeling .detail-hero-image-inner{
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  body.page-detail_modeling .detail-hero-image-inner img{
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 16px !important;
+    display: block !important;
+  }
+
+  /* INTRO */
+  body.page-detail_modeling .detail-intro{
+    padding-bottom: 90px !important;
+    padding-left: var(--pad) !important;
+    padding-right: var(--pad) !important;
+  }
+
+  body.page-detail_modeling .detail-intro-inner{
+    max-width: 900px !important;
+    margin: 0 auto !important;
+    font-size: 15px !important;
+    line-height: 1.9 !important;
+  }
+
+  /* DETAIL — mantém 2 colunas no tablet, mas sem “hacks” */
+  body.page-detail_modeling .detail-detail{
+    padding-left: var(--pad) !important;
+    padding-right: var(--pad) !important;
+  }
+
+  body.page-detail_modeling .detail-detail-inner{
+    max-width: none !important;
+    margin: 0 !important;
+
+    display: grid !important;
+    grid-template-columns: 1.15fr 1fr !important;
+    column-gap: 26px !important;
+    align-items: start !important;
+  }
+
+  body.page-detail_modeling .detail-detail-text{
+    max-width: none !important;
+  }
+
+  body.page-detail_modeling .detail-detail-text h2{
+    margin: 0 0 18px !important;
+    font-size: 30px !important;
+    line-height: 1.2 !important;
+  }
+
+  body.page-detail_modeling .detail-detail-text ul{
+    font-size: 15px !important;
+    line-height: 1.85 !important;
+    padding-left: 18px !important;
+  }
+
+  body.page-detail_modeling .detail-detail-text li{
+    margin-bottom: 8px !important;
+  }
+
+  /* imagem — remove o margin-left negativo do desktop */
+  body.page-detail_modeling .detail-detail-image{
+    max-width: none !important;
+    margin: 0 !important;
+    justify-self: stretch !important;
+    padding-top: 100px !important;
+  }
+
+  body.page-detail_modeling .detail-detail-image img{
+    width: 100% !important;
+    height: 420px !important;
+    object-fit: cover !important;
+    border-radius: 16px !important;
+    display: block !important;
+  }
+}

@@ -1,0 +1,277 @@
+/* ================================
+    CABECALHO PÁGINAS MENOS INDEX
+   ================================ */
+
+@media (min-width: 1367px){
+
+  
+
+  :root{
+    --header-h: 250px;     /* altura da barra preta */
+    --rail: 520px;         /* “coluna” do logo */
+    --nav-top: 88px;       /* posição vertical do menu (ajusta fino se precisares) */
+
+    --nav-gap: 44px;
+    --underline-h: 4px;
+  }
+
+
+  body.page-portfolio::before{
+    content:"";
+    position: absolute !important;
+    top:0; left:0; right:0;
+    height: var(--header-h);
+    background:#262626;
+    z-index:150;
+  }
+
+
+  body.page-portfolio .left-rail{
+    position: absolute !important;
+    top:0 !important;
+    left:0 !important;
+    bottom:auto !important;
+
+    height: var(--header-h) !important;
+    width: var(--rail) !important;
+
+    background: transparent !important;
+
+    display:flex !important;
+    align-items:center !important;
+    justify-content:flex-start !important;
+
+    padding: 0 !important;
+    z-index:300 !important;
+
+    overflow: visible !important;
+    min-height: 0 !important;
+  }
+
+  /* Logo MAIS à esquerda (sem desaparecer) */
+  body.page-portfolio .left-rail .brand{
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    display: block !important;
+  }
+
+  body.page-portfolio .left-rail .brand img{
+    display:block !important;
+    height: 200px !important;
+    width: auto !important;
+    margin-left: 0 !important;
+  }
+
+ 
+  body.page-portfolio .top-nav{
+    position: absolute !important;
+    top: var(--nav-top) !important;
+    left: calc(var(--rail) + 40px) !important;
+    right: 90px !important;
+    z-index: 310 !important;
+  }
+
+
+  body.page-portfolio .top-nav > ul{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:flex-end !important;
+
+    gap: var(--nav-gap) !important;
+    margin:0 !important;
+    padding:0 !important;
+    list-style:none !important;
+  }
+
+  /* Aumentar SÓ os links (exclui LOGIN e idioma) */
+  body.page-portfolio .top-nav > ul > li:not(.login-item):not(.lang-item) > a{
+    position: relative !important;
+    display: inline-block !important;
+
+    font-size: 27px !important;     /* aumenta os links */
+    line-height: 1 !important;
+    padding-bottom: 2px !important; /* dá espaço para a underline */
+  }
+
+  /* underline mais grossa só para links do menu */
+  body.page-portfolio .top-nav > ul > li:not(.login-item):not(.lang-item) > a::after{
+    height: var(--underline-h) !important;
+    bottom: -4px !important;
+  }
+
+  /* SERVICES ativo vermelho (links do menu) */
+  body.page-portfolio .top-nav > ul > li:not(.login-item):not(.lang-item) > a.active{
+    color:#e42323 !important;
+  }
+  body.page-portfolio .top-nav > ul > li:not(.login-item):not(.lang-item) > a.active::after{
+    background:#e42323 !important;
+    animation:none !important;
+    transform:scaleX(1) !important;
+  }
+
+  /* Subir só os itens do menu (não mexe nos botões) — foi o que funcionou contigo */
+  body.page-portfolio .top-nav > ul > li:not(.login-item):not(.lang-item){
+    transform: translateY(-8px) !important; /* ajusta -8 / -12 se precisares */
+  }
+
+
+  body.page-portfolio .top-nav .login-btn,
+  body.page-portfolio .top-nav > ul > li.lang-item .lang-current{
+    padding: 0 40px !important;
+    height: 85px !important;
+    font-size: 25px !important;
+
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    line-height: 1 !important;
+  }
+
+     .top-nav .lang-dropdown .lang-list{
+    max-height: 300px !important;
+    overflow-y: auto !important;
+
+    margin-right: -16px !important;   
+    padding-right: 0 !important;
+  }
+
+  /* não deixar underline do menu nestes botões */
+  body.page-portfolio .top-nav .login-btn::after,
+  body.page-portfolio .top-nav .lang-current::after{
+    content: none !important;
+    display: none !important;
+  }
+
+ 
+  body.page-portfolio .page{
+    padding-top: calc(var(--header-h) + 40px) !important;
+    padding-left: calc(var(--rail) + 40px) !important;
+  }
+
+  /* Puxa a imagem para a esquerda (porque o PNG tem espaço transparente) */
+  body.page-portfolio .left-rail .brand img{
+  transform: translateX(-170px) !important;  /* testa -30 / -45 / -60 */
+}
+
+    /* ================================
+            RESTO DA PAGINA
+   ================================ */
+
+  .portfolio-page{
+    padding-top: 450px;     /* mais “respiro” do header */
+    padding-bottom: 220px;
+  }
+
+  /* ======= HERO (Portfolio) ======= */
+  .portfolio-hero{
+    padding-left: var(--rail);
+    padding-right: 180px;
+    margin-bottom: 200px;
+  }
+
+  .portfolio-title{
+    font-size: 160px;
+    line-height: 1.03;
+    font-weight: 700;
+  }
+
+  /* ======= GRID CASE STUDIES ======= */
+  .portfolio-grid{
+    padding-left: var(--rail);
+    padding-right: 320px;
+    margin-bottom: 40px;
+  }
+
+  .portfolio-item{
+    max-width: 1600px; /* imagem maior */
+  }
+
+  .portfolio-image{
+    border-radius: 6px;
+  }
+
+  .portfolio-image img{
+    /* mantém a tua animação do hover */
+    transform-origin: center;
+  }
+
+  .portfolio-caption{
+    margin-top: 16px;
+    font-size: 34px;
+    font-weight: 700;
+  }
+
+
+   /* TESTIMONIALS */
+  
+.home-testimonials{
+  padding-top: 280px !important;
+  padding-bottom: 100px !important;
+  padding-right: 240px !important;
+  padding-left: calc(var(--rail) + 90px) !important;
+}
+
+.home-testimonials-inner{
+  max-width: 2000px !important;
+}
+
+.home-testimonials .home-kicker{
+  font-size: 27px !important;
+  margin: 0 0 26px !important;
+  letter-spacing: .15em !important;
+  font-weight: 700;
+}
+
+.home-testimonials-title{
+  font-size: 150px !important;
+  line-height: 1.02 !important;
+  margin: 0 0 80px !important;
+}
+
+.testimonials-separator{
+  border-top-width: 5px !important;
+  margin: 0 0 34px !important;
+  width: 85% !important;
+}
+
+/* layout 2 colunas (nome/role + texto) */
+.home-testimonials-body{
+  grid-template-columns: 400px 1fr !important;
+  column-gap: 200px !important;
+  font-size: 27px !important;
+  line-height: 56px !important;
+}
+
+/* coluna esquerda */
+.testimonial-meta .testimonial-name{
+  font-size: 30px !important;
+  margin: 0 0 16px !important;
+}
+
+.testimonial-meta .testimonial-role{
+  font-size: 30px !important;
+}
+
+/* coluna direita */
+.testimonial-quote p{
+  font-size: 32px !important;
+  line-height: 2 !important;
+  max-width: 820px !important;
+  margin-left: 60px !important;
+}
+
+/* setas */
+.home-testimonials-nav{
+  margin-top: 72px !important;
+  gap: 16px !important;
+  transform: translateX(500px) !important;
+}
+
+.home-testimonials-arrow{
+  width: 70px !important;
+  height: 70px !important;
+  font-size: 37px !important;
+}
+
+}

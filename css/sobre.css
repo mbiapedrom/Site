@@ -1,0 +1,264 @@
+:root{
+  --page-bg-about: #ffffff;
+}
+
+html{
+  overflow-x: hidden;
+}
+
+/* fundo e tipografia da página ABOUT */
+body.page-sobre{
+  background: linear-gradient(
+    #262626 0 170px,
+    var(--page-bg-about) 150px 100%);
+  color: #444444;
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
+}
+
+/* barra esquerda branca como nos services */
+body.page-sobre .left-rail{
+  
+  bottom: auto;
+  height: auto;
+  justify-content: flex-start;
+  padding-left: 55px;
+  padding-right: 0;
+}
+
+/* MAIN */
+.about-page{
+  padding-top: 300px;
+  padding-bottom: 0px;
+}
+
+/* título "About us" */
+.about-hero{
+  padding-left: var(--rail);
+}
+
+.about-title{
+  margin: 0 0 40px;
+  font-size: 80px;
+  line-height: 1.05;
+  font-weight: 700;
+  color: #3f3f3f;
+  margin-left: -150px;
+}
+
+/* faixa escura com o vídeo */
+.about-hero-video{
+  margin-top: 80px;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: calc(var(--rail) -40px);    
+  padding-right: 150px;
+  background: #ffffff;           
+}
+
+.about-hero-video-inner{
+  max-width: 1600px;
+  margin: 0 auto;
+  
+}
+
+.about-video{
+  display: block;
+  width: 90%;
+  height: auto;   
+  margin-left: auto;   
+  margin-right: 0;         
+  object-fit: contain;      
+  background: #262626       
+}
+
+/* ===== ABOUT – TEXTO INTRO INICIAL ===== */
+
+.about-intro{
+  padding-top: 140px;
+  padding-bottom: 80px;
+}
+
+.about-intro-inner{
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.9;
+  color: #555;
+}
+
+/* ===== BLOCO GENÉRICO (OUR MISSION / THE SOLUTION) ===== */
+
+.about-block{
+  padding-top: 140px;
+  padding-bottom: 40px;
+}
+
+.about-block-inner{
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.about-block-title{
+  margin: 0 0 32px;
+  font-size: 43px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #3f3f3f;
+}
+
+.about-block p{
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.9;
+  color: #555;
+}
+
+.about-mission{
+  padding-left: calc(var(--rail) + 40px);
+}
+
+.about-mission .about-block-inner{
+  max-width: 550px;
+  margin: 0;          
+}
+
+.about-solution{
+  padding-top: 10px;   /* antes herda 140px do .about-block ─ agora sobe */
+  margin-bottom: 160px;
+}
+
+.about-solution .about-block-inner{
+  transform: translateX(250px);  /* empurra tudo 80px para a direita */
+}
+
+
+
+/* ===== IMAGEM ENTRE OS TEXTOS ===== */
+
+.about-image-block{
+  padding-top: 20px;
+  padding-bottom: 80px;
+}
+
+.about-image-inner{
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.about-image-inner img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.about-team{
+  padding-top: 100px;
+  padding-bottom: 140px;
+  background: #f6f6f6;
+}
+
+.about-team-inner{
+  max-width: 1150px;                         /* um pouco mais largo */
+  margin-left: calc(var(--rail) + 40px);     /* encosta mais à esquerda */
+  margin-right: auto;
+  padding-left: 0;                           /* tiramos o padding extra */
+  padding-right: 130px;
+}
+
+.about-team-title{
+  margin: 0 0 56px;
+  font-size: 48px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #3f3f3f;
+}
+
+.about-team-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 35px;
+  row-gap: 70px;
+}
+
+.team-card img{
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 14px;
+}
+
+.team-name{
+  margin: 0 0 4px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #555;
+}
+
+.team-role{
+  margin: 0;
+  font-size: 16px;
+  color: #b0b0b0;
+}
+
+/* ===== ABOUT US — Ajustes apenas para portátil (monitores ≤ 1900px) ===== */
+@media (min-width: 1200px) and (max-width: 1919px) {
+
+  /* título mais para a esquerda */
+  .about-title{
+    margin-left: -320px;   /* antes -150px → move mais para a esquerda */
+  }
+
+  /* imagem/vídeo ligeiramente mais para a direita */
+  .about-video{
+    width: 100%;            /* aumenta um pouco */
+    margin-right: -75px;   /* empurra para a direita */
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1919px){
+
+  /* container da secção "Meet the team" um pouco mais à esquerda */
+  .about-team-inner{
+    margin-left: calc(var(--rail) - 260px); /* puxa tudo para a esquerda */
+    margin-right: auto;
+  }
+
+  /* título "Meet the team" mais para a esquerda, mas ainda alinhado com a grelha */
+  .about-team-title{
+    margin-left: 0;        /* garante que não tem recuo extra */
+    text-align: left;      /* mantém alinhado à esquerda */
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1919px) {
+
+  /* puxa o bloco Mission mais para a esquerda no portátil */
+  .about-mission{
+    padding-left: calc(var(--rail) - 50px);  /* em vez de + 40px */
+  }
+
+  .about-mission .about-block-inner{
+    max-width: 550px;
+    margin: 0;               /* continua encostado à esquerda da secção */
+    margin-left: -50px;      /* ajuste extra, se quiseres ainda mais à esquerda */
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1919px) {
+
+  /* mover a secção Solution para a esquerda no portátil */
+  .about-solution{
+    padding-left: calc(var(--rail) - 20px);  /* igual ao Mission */
+  }
+
+  /* mover o bloco de texto ainda mais para a esquerda */
+  .about-solution .about-block-inner{
+    max-width: 550px;        /* igual ao Mission */
+    margin: 0;               /* tira margens automáticas */
+    margin-left: -20px;      /* puxa o texto para a esquerda */
+  }
+}
+
+
+

@@ -1,0 +1,357 @@
+:root{
+  --page-bg-contact: #ffffff;
+}
+
+html{
+  overflow-x: hidden;
+}
+
+/* Fundo e tipografia geral */
+body.page-contactos{
+  background: linear-gradient(
+    #262626 0 170px,
+    var(--page-bg-contact) 150px 100%);
+  color: #444444;
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI",
+  Roboto, sans-serif;
+}
+
+/* barra esquerda branca, como ABOUT / SERVICES */
+body.page-contactos .left-rail{
+  bottom: auto;
+  height: auto;
+  justify-content: flex-start;
+  padding-left: 55px;
+  padding-right: 0;
+}
+
+/* MAIN */
+.contact-page{
+  padding-top: 270px;
+  padding-bottom: 160px;
+}
+
+/* TÍTULO "Contact us" */
+.contact-hero{
+  padding-left: var(--rail);
+}
+
+.contact-title{
+  margin: 0 0 140px;
+  font-size: 80px;
+  line-height: 1.05;
+  font-weight: 700;
+  text-align: center;
+  color: #3f3f3f;
+  text-align: left;
+  margin-left: -250px;
+  padding-top: 40px;
+}
+
+/* BLOCO PHONE / ADDRESS / EMAIL */
+.contact-info{
+  padding-left: calc(var(--rail) -40px);
+  padding-right: 380px;
+  margin-bottom: 140px;
+}
+
+.contact-info-inner{
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 120px;
+}
+
+.contact-info-label{
+  margin: 0 0 18px;
+  font-size: 27px;
+  font-weight: 600;
+  color: #555555;
+}
+
+.contact-info-col p{
+  margin: 0 0 8px;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #777777;
+}
+
+.contact-info-col a{
+  color: inherit;
+  text-decoration: none;
+}
+
+.contact-info-col a:hover{
+  color: #e42323;
+  font-weight: 700;
+}
+
+/* FORM + MAPA (2 colunas) */
+.contact-body{
+  padding-left: var(--rail);
+  padding-right: 100px;
+}
+
+.contact-body-inner{
+  max-width: 1500px;
+  margin-left: 0;
+  margin-right: 0;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr; 
+  column-gap: 40px;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+/* FORM */
+.contact-form{
+  width: 100%;          /* ocupa toda a largura da coluna */
+  max-width: none;      /* sem limite fixo */
+  margin: 0;            /* tira o “centrado” com espaços dos lados */
+
+  background: #262626;
+  padding: 40px 55px 45px;
+
+  color: #f5f5f5;
+  box-shadow: 0 18px 45px rgba(0,0,0,.45);
+}
+
+.field{
+  margin-bottom: 15px;
+}
+
+.field.error input,
+.field.error textarea{
+  border: 2px solid #e42323;
+  color: #ffffff;
+}
+
+.field .error-msg{
+  display: none;
+  margin-top: 12px !important;
+  font-size: 11px;
+  color: #e42323;
+  visibility: hidden;      
+}
+
+.field.error .error-msg{
+  visibility: visible;
+  display: block;
+}
+
+.field input,
+.field textarea{
+  width: 100%;                 /* ocupa toda a largura do cartão */
+  border: 1px solid #4b4b4b;
+  padding: 18px 16px;
+  font-size: 16px;
+  font-family: inherit;
+  background: #f0f0f0;         /* se quiseres voltar ao claro dentro, senão mete #3b3b3b */
+  color: #555555;
+  box-sizing: border-box;
+  resize: vertical;
+ 
+}
+
+.field input:focus,
+.field textarea:focus{
+  outline: 1px solid #e42323;  
+  outline-offset: 0;          
+  border: none;                
+}
+
+
+.field textarea{
+  min-height: 200px;
+}
+
+/* checkbox + texto */
+.contact-consent{
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #777777;
+  margin: 18px 0 40px;
+  font-weight: 700;
+}
+
+.contact-consent > span{
+  display: block;
+  max-width: 480px;       /* ajusta: 420–520px até ficares satisfeito */
+}
+
+.contact-consent input[type="checkbox"]{
+  margin-top: 4px;
+}
+
+.contact-consent .asterisk{
+  color: #e42323;
+}
+
+/* BOTÃO SEND MESSAGE */
+.contact-submit{
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 40px;
+
+  border: 2px solid #e42323;
+  background: transparent;
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .20em;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background .25s ease, color .25s ease, transform .08s ease;
+}
+
+.contact-submit::before{
+  content: "";
+  position: absolute;
+  inset: 0;                 /* top/right/bottom/left: 0 */
+  background: #e42323;
+  transform-origin: left center;
+  transform: scaleX(0);     /* começa vazio */
+  transition: transform .20s ease-out;
+  z-index: -1;              /* fica por trás do texto */
+}
+
+.contact-submit .arrow{
+  font-size: 22px;
+  transform: translateY(-1px);
+  font-weight: 100;
+}
+
+.contact-submit:hover{
+  background: #262626;
+  color: #ffffff;
+ 
+}
+
+.contact-submit:hover::before{
+  transform: scaleX(1);
+}
+
+
+/* MAPA */
+.contact-map{
+  width: calc(100% + 170px);
+  height: 670px;
+  background: #cccccc;
+  margin-left: -160px;
+}
+
+/* mensagem de erro da checkbox */
+.contact-consent .error-msg{
+  display: none;
+  margin-top: 13px !important;
+  margin-right: 30px;
+  font-size: 11px;
+  color: #e42323;      
+  visibility: hidden;  
+}
+
+.contact-map iframe{
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* quando houver erro, mostramos */
+.contact-consent.error .error-msg{
+  visibility: visible;
+  display: block;
+}
+
+/* === OVERRIDES SÓ PARA A PÁGINA DE CONTACTOS === */
+
+/* tira qualquer centragem do grid */
+body.page-contactos .contact-body-inner{
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  justify-content: flex-start;
+}
+
+/* empurra o cartão do formulário mais para a esquerda */
+body.page-contactos .contact-form{
+  margin-left: -250px !important;  /* ajusta: -40, -80, etc. até ficar igual ao original */
+}
+
+/* garante que os campos ocupam o cartão todo */
+body.page-contactos .field input,
+body.page-contactos .field textarea{
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ===== AJUSTES CONTACT US – PORTÁTIL ===== */
+@media (min-width: 1200px) and (max-width: 1919px) {
+
+  /* título alinhado como nas outras páginas */
+  .contact-title{
+    margin-right: 50px;
+    padding-top: 0;
+    text-align: left;
+  }
+
+  /* bloco Phone / Address / Email alinhado ao rail e com menos “ar” à direita */
+  .contact-info{
+    padding-left: 170px;
+    padding-right: 150px;
+    margin-bottom: 120px;
+  }
+
+  /* grid do form + mapa */
+  .contact-body{
+    padding-left: 100px;
+    padding-right: 150px;
+    margin-bottom: 140px;
+  }
+
+.contact-body-inner{
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 600px 1fr; /* form + mapa */
+    column-gap: 60px;
+    align-items: flex-start;
+  }
+
+  body.page-contactos .contact-form{
+    margin-left: 0 !important;
+    max-width: 600px;
+    width: 100%;
+  }
+
+  /* === MAPA: largura total da coluna + altura maior === */
+  .contact-map{
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    margin: 0;
+
+    width: 100% !important;   /* ocupa a coluna toda */
+    min-width: 600px;
+    height: 670px !important; /* aumenta a altura do mapa */
+    overflow: hidden;
+  }
+
+  .contact-map iframe{
+    width: 100% !important;
+    height: 100% !important;
+    border: 0;
+    display: block;
+  }
+}

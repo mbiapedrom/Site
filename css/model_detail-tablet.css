@@ -1,0 +1,151 @@
+@media (min-width: 768px) and (max-width: 1199px) {
+
+.mobile-topbar{
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+  height: 10px !important;  
+  box-shadow: none !important;
+}
+
+
+.mobile-logo img{ height: 120px; width: auto; }
+
+.mobile-menu-btn{
+    left: 14px;
+    top: 100px;
+    width: 80px;
+    height: 80px;
+  }
+
+    .mobile-login{
+    left: 18px;
+    top: 14px;
+    padding: 16px 22px;
+    font-size: 15px;
+  }
+
+  .mobile-topbar .lang-current{
+    padding: 16px 24px !important;
+    font-size: 15px !important;
+    height: 50px !important;
+  }
+
+    .mobile-topbar .lang-flag{
+    width: 21px !important;
+    height: 21px !important;
+  }
+
+    .lang-code{
+    font-size: 16px;
+  }
+
+  
+  body.page-model_detail .left-rail{
+    display: none !important;
+  }
+
+  /* wrapper */
+  body.page-model_detail .model-detail-page{
+    padding-top: 120px !important;
+    padding-bottom: 80px !important;
+  }
+
+  /* HERO */
+  body.page-model_detail .model-detail-hero{
+    padding-left: var(--pad) !important;
+    padding-right: var(--pad) !important;
+  }
+
+  body.page-model_detail .model-detail-title{
+    margin: 10px 0 30px !important;
+    font-size: 56px !important;
+    line-height: 1.06 !important;
+    max-width: none !important;
+  }
+
+  /* IMAGEM GRANDE */
+  body.page-model_detail .model-detail-main-image{
+    padding-left: var(--pad) !important;
+    padding-right: var(--pad) !important;
+    margin-bottom: 40px !important;
+  }
+
+  /* IMPORTANT: no mobile tinhas margin-left:150px — no tablet isso parte fácil */
+  body.page-model_detail .model-detail-main-image-inner{
+    max-width: 980px !important;
+    margin: 0 auto !important;
+  }
+
+  body.page-model_detail .model-detail-main-image-inner img{
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 16px !important;
+    display: block !important;
+  }
+
+  /* TEXTO */
+  body.page-model_detail .model-detail-description{
+    padding-left: var(--pad) !important;
+    padding-right: var(--pad) !important;
+    margin: 0 0 70px 0 !important;
+  }
+
+  body.page-model_detail .model-detail-description-inner{
+    max-width: 900px !important;
+    margin: 0 auto !important;
+    text-align: left !important;
+  }
+
+  body.page-model_detail .model-detail-description-inner p{
+    font-size: 15px !important;
+    line-height: 1.9 !important;
+  }
+
+  /* NEXT PROJECT — tablet: mantém 2 colunas (mais bonito que 1 col.) */
+  body.page-model_detail .model-detail-next{
+    background: #f1f1f1 !important;
+
+    width: 100vw !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+
+    padding-top: 90px !important;
+    padding-bottom: 90px !important;
+
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  body.page-model_detail .model-detail-next-inner{
+    padding-left: var(--pad) !important;
+    padding-right: var(--pad) !important;
+
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 26px !important;
+    align-items: start !important;
+  }
+
+  body.page-model_detail .model-detail-next-kicker{
+    font-size: 14px !important;
+    margin: 0 0 10px !important;
+  }
+
+  body.page-model_detail .model-detail-next-title{
+    font-size: 34px !important;
+    line-height: 1.12 !important;
+    margin: 0 0 18px !important;
+  }
+
+  body.page-model_detail .model-detail-next-image{
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  body.page-model_detail .model-detail-next-image img{
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 16px !important;
+    display: block !important;
+  }
+}

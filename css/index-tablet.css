@@ -1,0 +1,384 @@
+
+ @media (min-width: 768px) and (max-width: 1199px) {
+
+ /* HOME – ABOUT US */
+  .home-about{
+    padding: 100px 24px !important; /* tira os paddings desktop */
+  }
+
+  .home-about-inner{
+    max-width: 100% !important;
+  }
+
+  .home-about-title{
+    font-size: 48px !important;
+    line-height: 1.05 !important;
+  }
+
+  .home-about-body{
+    grid-template-columns: 1fr !important; /* stack */
+    row-gap: 28px !important;
+    column-gap: 0 !important;
+    margin-top: 36px !important;
+  }
+
+  .home-about-media{
+    width: 100% !important;
+  }
+
+  .home-about-media img{
+    width: 100% !important;
+    transform: none !important;
+    border-radius: 6px; /* opcional */
+    margin-bottom: 36px !important;
+  }
+
+  .home-about-copy p{
+    font-size: 17px !important;
+    line-height: 28px !important;
+  }
+
+
+  
+  .home-services,
+  .home-detail,
+  .home-rendering{
+    background: #3f3f3f !important;
+    color: #fff !important;
+
+    padding: 64px var(--pad) 80px !important;
+    padding-left: var(--pad) !important;
+    padding-right: var(--pad) !important;
+  }
+
+  .home-services-inner,
+  .home-detail-inner,
+  .home-rendering-inner{
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  .home-services-title,
+  .home-detail-title,
+  .home-rendering-title{
+    margin: 0 0 22px !important;
+    font-size: 50px !important;
+    line-height: 1.08 !important;
+    font-weight: 700 !important;
+  }
+
+  .home-services .home-kicker{
+    margin: 0 0 12px !important;
+    font-size: 13px !important;
+    letter-spacing: .18em !important;
+  }
+
+
+  /* ==========================================================
+     WHAT WE DO (igual ao mobile)
+     ORDEM: img1 → img2 → texto
+     ========================================================== */
+
+  .home-services-body{
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-areas:
+      "img1"
+      "img2"
+      "copy" !important;
+    gap: 18px !important;
+    column-gap: 0 !important;
+  }
+
+  .home-services-col{
+    display: contents !important;
+  }
+
+  .home-services-col:first-child .home-services-image{ grid-area: img1 !important; }
+  .home-services-col:nth-child(2) .home-services-image{ grid-area: img2 !important; }
+  .home-services-col:first-child .home-services-copy{ grid-area: copy !important; }
+
+  .home-services-image{
+    width: 100% !important;
+    aspect-ratio: 16 / 9 !important;
+    border-radius: 13px !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+  }
+
+  .home-services-copy{
+    margin: 4px 0 0 0 !important;
+    max-width: none !important;
+  }
+
+  .home-services-copy h3{
+    font-size: 28px !important;
+    margin: 0 0 12px !important;
+  }
+
+  .home-services-link{
+    font-size: 14px !important;
+    letter-spacing: .16em !important;
+  }
+
+
+  /* ==========================================================
+     3D DETAIL MODELING (igual ao mobile)
+     ORDEM: img1 → img2 → texto
+     ========================================================== */
+
+  .home-detail-grid{
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-areas:
+      "img1"
+      "img2"
+      "copy" !important;
+    gap: 18px !important;
+    column-gap: 0 !important;
+    row-gap: 18px !important;
+  }
+
+  .detail-media{
+    width: 100% !important;
+    border-radius: 13px !important;
+    overflow: hidden !important;
+  }
+
+  .home-detail-copy{
+    max-width: none !important;
+  }
+
+  .home-detail-copy h3{
+    font-size: 28px !important;
+    margin: 0 0 12px !important;
+  }
+
+  .home-detail-copy p{
+    font-size: 14px !important;
+    line-height: 1.75 !important;
+    margin: 0 0 14px !important;
+    color: rgba(255,255,255,.78) !important;
+  }
+
+
+  /* ==========================================================
+     RENDERING (igual ao mobile)
+     ORDEM: img1 → img2 → texto
+     ========================================================== */
+
+  .home-rendering{
+    padding-bottom: 160px !important;
+  }
+
+  .home-rendering-grid{
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-areas:
+      "img1"
+      "img2"
+      "copy" !important;
+    gap: 18px !important;
+    column-gap: 0 !important;
+    row-gap: 18px !important;
+  }
+
+  .render-media{
+    width: 100% !important;
+    border-radius: 13px !important;
+    overflow: hidden !important;
+  }
+
+  .home-rendering-copy{
+    max-width: none !important;
+  }
+
+  .home-rendering-copy h3{
+    font-size: 28px !important;
+    margin: 0 0 12px !important;
+  }
+
+  .home-rendering-copy p{
+    font-size: 14px !important;
+    line-height: 1.75 !important;
+    margin: 0 0 14px !important;
+    color: rgba(255,255,255,.78) !important;
+  }
+
+
+  .home-testimonials{
+    padding: 64px var(--pad) 80px !important;
+  }
+
+  .home-testimonials-inner{
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  .home-testimonials-body{
+    display: block !important;
+  }
+
+  .home-testimonials-title{
+    font-size: 44px !important;
+    line-height: 1.1 !important;
+    margin-bottom: 18px !important;
+  }
+
+  /* navegação (setas) — sem transforms desktop */
+  .home-testimonials-nav{
+    transform: none !important;
+    margin: 28px 0 0 0 !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+    gap: 16px !important;
+    padding-right: 32px !important;
+  }
+
+  .home-testimonials-nav button,
+  .home-testimonials-nav .arrow,
+  .home-testimonials-nav .nav-arrow{
+    width: 46px !important;
+    height: 46px !important;
+    font-size: 22px !important;   /* se for icon font / SVG inline */
+  }
+
+  /* meta (nome / cargo) */
+  .testimonial-meta{
+    margin-bottom: 22px !important;
+  }
+
+  .testimonial-meta strong{
+    font-size: 15px !important;
+  }
+
+  .testimonial-meta span{
+    font-size: 12px !important;
+    opacity: .75;
+  }
+
+  /* texto do testemunho */
+  .testimonial-quote p{
+    font-size: 17px !important;
+    line-height: 1.7 !important;
+    margin-bottom: 0 !important;
+  }
+
+
+  .home-projects{
+    padding: 64px var(--pad) 80px !important;
+  }
+
+  /* viewport do slider */
+  .home-projects .slider-viewport{
+  width: 100% !important;
+  margin: 22px 0 0 0 !important;
+
+  position: relative !important;
+
+  --peek: 0px !important;
+  --gap: 16px !important;
+
+  aspect-ratio: 16 / 9 !important;     /* 🔑 força proporção */
+  height: auto !important;             /* 🔑 evita achatamento */
+  max-height: 420px !important;         /* 🔑 limite tablet */
+  overflow: hidden !important;
+  border-radius: 16px !important;
+}
+
+  /* slides = 1 por ecrã */
+  .home-projects .slides{
+    gap: var(--gap) !important;
+  }
+
+  .home-projects .slide{
+    flex: 0 0 100% !important;
+    opacity: 1 !important;
+  }
+
+  /* imagem */
+  .home-projects .slide img{
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+  }
+
+  /* ==========================================================
+     META (texto + setas)
+     ========================================================== */
+
+  .home-projects-meta{
+    position: relative !important;
+    padding-bottom: 20px !important;
+  }
+
+  .home-projects-caption{
+    margin: 0 !important;
+    margin-top: 70px !important;
+    font-size: 20px !important;
+    line-height: 1.65 !important;
+    max-width: 720px !important;
+  }
+
+  /* setas */
+  .home-projects-arrows{
+    position: absolute !important;
+    right: 10px !important;
+    bottom: 10px !important;
+    top: 50px !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+    transform: none !important;
+
+    display: flex !important;
+    gap: 14px !important;
+    z-index: 3 !important;
+  }
+
+  /* botões das setas — maiores e touch-friendly */
+  .case-nav{
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 24px !important;
+  }
+
+
+   .home-more-projects,
+   .home-more-projects-inner{
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    transform: none !important;
+  }
+
+  .home-more-projects{
+    padding: 70px var(--pad) !important;
+    padding-left: calc(var(--pad) + env(safe-area-inset-left)) !important;
+    padding-right: calc(var(--pad) + env(safe-area-inset-right)) !important;
+  }
+
+  /* 🔑 alinha o botão à direita sem hacks */
+  .home-more-projects-inner{
+    display: flex !important;
+    justify-content: flex-end !important;
+  }
+
+  .more-projects-link{
+    position: relative !important;
+    left: auto !important;
+    transform: none !important;
+
+    display: inline-flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin-right: -70px !important;
+  }
+
+  .more-plus{
+    margin-top: 10px !important;
+    opacity: .7 !important;
+  }
+}

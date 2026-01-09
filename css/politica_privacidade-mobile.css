@@ -1,0 +1,62 @@
+  @media (max-width: 767px) {
+
+    .mobile-topbar{
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+  height: 20px !important;  /* mantém a tua altura atual (não mexe no resto) */
+  box-shadow: none !important;
+}
+  
+  body.page-politica_privacidade .left-rail{
+    display: none !important;
+  }
+
+  .privacy-page{
+    padding-top: 60px !important;   /* antes 300 */
+    padding-bottom: 70px !important;
+  }
+
+  .privacy-hero{
+    padding-left: var(--pad) !important; /* antes var(--rail) */
+    padding-right: var(--pad) !important;
+  }
+
+  .privacy-title{
+    margin: 10px 0 18px !important;
+    font-size: 34px !important;
+    line-height: 1.1 !important;
+  }
+
+  .privacy-content{
+    padding-left: var(--pad) !important;
+    padding-right: var(--pad) !important; /* antes 220px */
+  }
+
+  .privacy-inner{
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  .privacy-inner h2{
+    margin: 26px 0 10px !important;
+    font-size: 22px !important;
+    line-height: 1.25 !important;
+  }
+
+  .privacy-inner p{
+    font-size: 14px !important;
+    line-height: 1.75 !important;  /* mais legível no mobile */
+    margin: 0 0 14px !important;
+    font-weight: 300 !important;
+  }
+
+  /* links: mantém limpo mas com feedback */
+  .privacy-inner a{
+    text-decoration: none !important;
+  }
+
+  .privacy-inner a:hover,
+  .privacy-inner a:focus{
+    color: #e42323 !important;
+  }
+}

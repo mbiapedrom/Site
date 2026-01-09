@@ -1,0 +1,349 @@
+.site-footer{
+  background: #262626;
+  color: #d5d5d5;
+  padding-top: 150px;
+  padding-bottom: 60px;
+  padding-left: calc(var(--rail) + 80px);  /* alinha com a barra esquerda */
+  padding-right: 500px;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.footer-inner{
+  max-width: 2000px;
+  margin: 0 auto;
+}
+
+/* bloco principal em duas colunas */
+.footer-contact-block{
+  display: grid;
+  grid-template-columns: 1.15fr 1.1fr;
+  column-gap: 100px;
+  align-items: flex-start;
+}
+
+
+/* coluna esquerda */
+.footer-kicker{
+  margin: 0 0 24px;
+  font-size: 16px;
+  letter-spacing: .14em;
+  color: #f0eeee;
+  margin-left: -8px; 
+}
+
+.footer-title{
+  margin: 0 0 40px;
+  font-size: 80px;
+  line-height: 1.02;
+  font-weight: 700;
+  color: #7f7f7f;
+  margin-left: -8px; 
+}
+
+.footer-address p{
+  margin: 0 0 30px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #d5d5d5;
+}
+
+.footer-address a{
+  color: #d5d5d5;
+  text-decoration: none;
+  transition: color .2s ease, opacity .2s ease;
+}
+
+.footer-address a:hover{
+  text-decoration: none;
+  color: #e42323;
+  opacity: 0.9;
+  font-weight: 700;
+}
+
+/* coluna direita – texto + botão */
+.footer-col-right p{
+  
+  font-size: 18px;
+  line-height: 1.9;
+  color: #d7d7d7;
+  margin-top: 0;        /* ou simplesmente remove esta regra */
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.footer-col-right{
+  margin-top: 100px;   /* desce todo o bloco da direita sem abrir buracos no texto */
+}
+
+.footer-col-left .footer-address{
+  margin-top: 60px;   /* aumenta/diminui até ficar igual ao segundo print */
+}
+
+.footer-col-left .footer-kicker{
+  display: block;        /* garante que se comporta como linha separada */
+  margin-bottom: 35px;   /* aumenta/diminui este valor até ficar como queres */
+}
+
+.footer-col-left .footer-title{
+  margin-top: 0;
+}
+
+/* botão CONTACT US */
+.footer-cta{
+  position: relative;  
+  z-index: 0;
+  overflow: hidden;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 24px;
+
+  padding: 2px 65px;
+  border: 2px solid #e42323;
+
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: .13em;
+  font-size: 14px;
+  font-weight: 700;
+
+  color: #ffffff;
+  background: transparent;
+  cursor: pointer;
+
+  transition: background .25s ease, color .25s ease, transform .08s ease;
+}
+
+.footer-cta::before{
+  content: "";
+  position: absolute;
+  inset: 0;                /* ocupa todo o botão */
+  background: #e42323;
+  transform: scaleX(0);    /* começa sem largura */
+  transform-origin: left center;
+  transition: transform .20s ease-out;
+  z-index: -1;
+}
+
+.footer-cta-label,
+.footer-cta-arrow{
+  position: relative;
+  z-index: 1;
+}
+
+
+.footer-cta-arrow{
+  font-size: 28px;
+  padding-bottom: 5px;
+}
+
+.footer-cta:hover::before{
+  transform: scaleX(1);
+}
+
+.footer-cta:hover{
+  background: #262626;
+  color: #ffffff;
+}
+
+/* linha inferior */
+.footer-bottom{
+  position: relative;              /* para posicionar a linha */
+  margin-top: 90px;
+  padding-top: 10px;
+  border-top: none;                /* tiramos a linha daqui */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 15px;
+  color: #9d9d9d;
+  font-weight: 600;
+}
+
+.footer-bottom::before{
+  content: "";
+  position: absolute;
+  left: -100px;
+  right: -120px;           /* valor negativo = estica para a direita */
+  top: 0;
+  height: 1px;
+  background: #3b3b3b;     /* mesma cor da linha antiga */
+}
+
+
+.footer-bottom-left{
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: flex-start;
+  font-size: 13px;
+  margin-left: -90px;
+  padding-top: 20px;
+}
+
+.footer-legal{
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;           /* se o ecrã for muito estreito pode quebrar bonito */
+}
+
+.footer-legal span{
+  white-space: nowrap;       /* evita partir no meio de "ALL RIGHTS RESERVED |" */
+}
+
+.footer-mini-logo{
+  height: 75px;          
+  width: auto;
+  display: block;
+  transform: translateY(0);  
+  opacity: 0.9;                 
+}
+
+.footer-bottom-left span{
+  white-space: nowrap;
+}
+
+
+/* links da linha de baixo: 3DSCAN2CAD + Privacy Policy */
+
+/* base: todos os links dessa linha sem sublinhado por defeito */
+.footer-bottom-left a{
+  text-decoration: none;
+  transition: color .2s ease, text-decoration .2s ease;
+}
+
+/* 3DSCAN2CAD – vermelho, estilo forte */
+.footer-brand{
+  color: #e42323;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color .2s ease, text-decoration .2s ease;
+}
+
+.footer-brand:hover{
+  color: #ffffff;          
+}
+
+/* Privacy Policy – cinzento, fica branco ao passar por cima */
+.footer-link{
+  color: #9d9d9d;
+  text-decoration: none;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-left: -3px;
+}
+
+.footer-link:hover{
+  color: #ffffff;                      /* destaca ao hover */
+}
+
+
+.footer-bottom-right{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 200px;
+  margin-left: auto;
+  margin-right: -120px;
+  padding-top: 50px;
+  font-size: 13px;
+}
+
+.footer-social{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 18px;
+  margin-top: 0;
+  margin-right: -50px;
+  margin-top: 15px;
+}
+
+/* links dos ícones */
+.footer-social-link{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #9d9d9d;
+  font-size: 22px;        
+  transition: color .2s ease, transform .1s ease;
+}
+
+/* hover: ligeiro destaque */
+.footer-social-link:hover{
+  color: #e42323;         /* ou #e42323 se quiseres vermelho */
+  transform: translateY(-1px);
+}
+
+.footer-design{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  margin-right: -120px;
+}
+
+.footer-design-logo{
+  height: 60px;
+  width: auto;
+  margin-top: 30px;
+}
+
+.footer-design-caption{
+  margin: 0;
+  font-size: 11px;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: #8e8e8e;
+  transform: translateX(5px);
+}
+
+.footer-brand{
+  color:#e42323;
+  font-weight: 700;
+}
+
+
+
+/* AJUSTE DO RODAPÉ PARA PORTÁTIL (ecrãs até 1920px largura) */
+@media (min-width: 1200px) and (max-width: 1919px) {
+
+  /* CENTRAR O FOOTER SEM MAX-WIDTH */
+  .site-footer{
+    padding-left: 120px !important;   /* valor que vamos ajustar */
+    padding-right: 120px !important;  /* o mesmo que à esquerda */
+  }
+
+  /* linha centrada */
+  .footer-bottom::before{
+    left: 10px !important;
+    right: 10px !important;
+  }
+
+  /* coluna esquerda */
+  .footer-bottom-left{
+    margin-left: 0 !important;
+  }
+
+  /* coluna direita */
+  .footer-bottom-right{
+    margin-right: 0 !important;
+    gap: 60px !important;
+    padding-top: 30px !important;
+  }
+
+  .footer-design{
+    margin-right: 0 !important;
+  }
+
+  .footer-social{
+    margin-right: 70px;
+    margin-top: 10px;
+    
+  }
+}

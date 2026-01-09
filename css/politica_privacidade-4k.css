@@ -1,0 +1,208 @@
+/* ================================
+    CABECALHO PÁGINAS MENOS INDEX
+   ================================ */
+
+@media (min-width: 1367px){
+
+  
+
+  :root{
+    --header-h: 250px;     /* altura da barra preta */
+    --rail: 520px;         /* “coluna” do logo */
+    --nav-top: 88px;       /* posição vertical do menu (ajusta fino se precisares) */
+
+    --nav-gap: 44px;
+    --underline-h: 4px;
+  }
+
+
+  body.page-politica_privacidade::before{
+    content:"";
+    position: absolute !important;
+    top:0; left:0; right:0;
+    height: var(--header-h);
+    background:#262626;
+    z-index:150;
+  }
+
+
+  body.page-politica_privacidade .left-rail{
+    position: absolute !important;
+    top:0 !important;
+    left:0 !important;
+    bottom:auto !important;
+
+    height: var(--header-h) !important;
+    width: var(--rail) !important;
+
+    background: transparent !important;
+
+    display:flex !important;
+    align-items:center !important;
+    justify-content:flex-start !important;
+
+    padding: 0 !important;
+    z-index:300 !important;
+
+    overflow: visible !important;
+    min-height: 0 !important;
+  }
+
+  /* Logo MAIS à esquerda (sem desaparecer) */
+  body.page-politica_privacidade .left-rail .brand{
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    display: block !important;
+  }
+
+  body.page-politica_privacidade .left-rail .brand img{
+    display:block !important;
+    height: 200px !important;
+    width: auto !important;
+    margin-left: 0 !important;
+  }
+
+ 
+  body.page-politica_privacidade .top-nav{
+    position: absolute !important;
+    top: var(--nav-top) !important;
+    left: calc(var(--rail) + 40px) !important;
+    right: 90px !important;
+    z-index: 310 !important;
+  }
+
+
+  body.page-politica_privacidade .top-nav > ul{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:flex-end !important;
+
+    gap: var(--nav-gap) !important;
+    margin:0 !important;
+    padding:0 !important;
+    list-style:none !important;
+  }
+
+  /* Aumentar SÓ os links (exclui LOGIN e idioma) */
+  body.page-politica_privacidade .top-nav > ul > li:not(.login-item):not(.lang-item) > a{
+    position: relative !important;
+    display: inline-block !important;
+
+    font-size: 27px !important;     /* aumenta os links */
+    line-height: 1 !important;
+    padding-bottom: 2px !important; /* dá espaço para a underline */
+  }
+
+  /* underline mais grossa só para links do menu */
+  body.page-politica_privacidade .top-nav > ul > li:not(.login-item):not(.lang-item) > a::after{
+    height: var(--underline-h) !important;
+    bottom: -4px !important;
+  }
+
+  /* SERVICES ativo vermelho (links do menu) */
+  body.page-politica_privacidade .top-nav > ul > li:not(.login-item):not(.lang-item) > a.active{
+    color:#e42323 !important;
+  }
+  body.page-politica_privacidade .top-nav > ul > li:not(.login-item):not(.lang-item) > a.active::after{
+    background:#e42323 !important;
+    animation:none !important;
+    transform:scaleX(1) !important;
+  }
+
+  /* Subir só os itens do menu (não mexe nos botões) — foi o que funcionou contigo */
+  body.page-politica_privacidade .top-nav > ul > li:not(.login-item):not(.lang-item){
+    transform: translateY(-8px) !important; /* ajusta -8 / -12 se precisares */
+  }
+
+
+  body.page-politica_privacidade .top-nav .login-btn,
+  body.page-politica_privacidade .top-nav > ul > li.lang-item .lang-current{
+    padding: 0 40px !important;
+    height: 85px !important;
+    font-size: 25px !important;
+
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    line-height: 1 !important;
+  }
+
+      .top-nav .lang-dropdown .lang-list{
+    max-height: 300px !important;
+    overflow-y: auto !important;
+
+    margin-right: -16px !important;   
+    padding-right: 0 !important;
+  }
+
+  /* não deixar underline do menu nestes botões */
+  body.page-politica_privacidade .top-nav .login-btn::after,
+  body.page-politica_privacidade .top-nav .lang-current::after{
+    content: none !important;
+    display: none !important;
+  }
+
+ 
+  body.page-politica_privacidade .page{
+    padding-top: calc(var(--header-h) + 40px) !important;
+    padding-left: calc(var(--rail) + 40px) !important;
+  }
+
+  /* Puxa a imagem para a esquerda (porque o PNG tem espaço transparente) */
+  body.page-politica_privacidade .left-rail .brand img{
+  transform: translateX(-170px) !important;  /* testa -30 / -45 / -60 */
+}
+
+    /* ================================
+            RESTO DA PAGINA
+   ================================ */
+
+
+  /* MAIN WRAPPER */
+  .privacy-page{
+    padding-top: 420px;      /* era 300 */
+    padding-bottom: 260px;   /* era 160 */
+  }
+
+  /* TÍTULO */
+  .privacy-hero{
+    padding-left: var(--rail);
+  }
+
+  .privacy-title{
+    margin: 0 0 120px;       /* era 80 */
+    font-size: 130px;        /* era 80 */
+    line-height: 1.05;
+  }
+
+  /* BLOCO DE CONTEÚDO */
+  .privacy-content{
+    padding-left: var(--rail);
+    padding-right: 340px;    /* era 220 */
+  }
+
+  .privacy-inner{
+    max-width: 1650px;       /* era 1150 */
+  }
+
+  /* Subtítulos */
+  .privacy-inner h2{
+    margin: 90px 0 18px;     /* era 60 / 12 */
+    font-size: 76px;         /* era 40 */
+    line-height: 1.25;
+  }
+
+  /* Parágrafos */
+  .privacy-inner p{
+    margin: 0 0 28px;        /* era 18 */
+    font-size: 32px;         /* era 17 */
+    line-height: 2.05;       /* era 2.0 */
+  }
+
+  /* Links: mantém o teu estilo, só ligeiro ajuste opcional */
+  .privacy-inner a{
+    transition: color .2s ease;
+  }
+
+}

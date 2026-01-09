@@ -1,0 +1,76 @@
+  @media (max-width: 767px) {
+  
+  .mobile-topbar{
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+  height: 20px !important;  
+  box-shadow: none !important;
+}
+
+body.page-portfolio .left-rail{
+  display: none !important;
+}
+
+body.page-portfolio .portfolio-page{
+  padding-top: 90px !important;
+  padding-bottom: 70px !important;
+}
+
+body.page-portfolio .portfolio-hero{
+  padding-left: var(--pad) !important;
+  padding-right: var(--pad) !important;
+  margin-bottom: 26px !important;
+}
+
+body.page-portfolio .portfolio-title{
+  font-size: 40px !important;
+  line-height: 1.1 !important;
+}
+
+body.page-portfolio .portfolio-grid{
+  padding-left: var(--pad) !important;
+  padding-right: var(--pad) !important;
+}
+
+body.page-portfolio .portfolio-item{
+  max-width: none !important;
+}
+
+body.page-portfolio .portfolio-image{
+  border-radius: 14px !important;
+}
+
+/* legenda */
+body.page-portfolio .portfolio-caption{
+  font-size: 14px !important;
+  margin-top: 10px !important;
+}
+
+/* =========================
+   TESTIMONIALS — MOBILE
+   ========================= */
+
+  .home-testimonials{ padding: 56px var(--pad) 10px !important;}
+  .home-testimonials-body{ display: block; }
+
+  .home-testimonials-title{
+    font-size: 36px;
+    line-height: 1.1;
+  }
+
+  .home-testimonials-nav{
+    transform: none;
+    margin-left: 220px !important;
+    margin-top: 32px !important;
+  }
+
+  .testimonial-meta{
+  margin-bottom: 22px !important;  /* espaço entre meta e texto */
+}
+
+.testimonial-quote p{
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+}
+
+  }

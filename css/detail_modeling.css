@@ -1,0 +1,194 @@
+:root{
+  --page-bg-detail: #ffffff;
+}
+
+html{
+  overflow-x: hidden;
+}
+
+/* FUNDO + TIPOGRAFIA GERAL */
+body.page-detail_modeling{
+  background: linear-gradient(
+    #262626 0 170px,
+    var(--page-bg-detail) 150px 100%);
+  color: #444444;
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI",
+               Roboto, sans-serif;
+}
+
+/* barra esquerda branca, igual a services/about/contact */
+body.page-detail_modeling .left-rail{
+  bottom: auto;
+  height: auto;
+  justify-content: flex-start;
+  padding-left: 55px;
+  padding-right: 0;
+}
+
+/* wrapper principal */
+.detail-page{
+  padding-top: 300px;
+  padding-bottom: 200px;
+}
+
+/* ===== TÍTULO + IMAGEM GRANDE ===== */
+
+.detail-hero{
+  padding-left: var(--rail);
+  padding-right: 150px;
+}
+
+.detail-title{
+  margin: 0 0 80px;
+  font-size: 80px;
+  line-height: 1.05;
+  font-weight: 700;
+  color: #4a4a4a;
+}
+
+/* imagem logo a seguir ao título */
+.detail-hero-image{
+  padding-left: var(--rail);
+  padding-right: 150px;
+  margin-bottom: 140px;
+}
+
+.detail-hero-image-inner{
+  max-width: 1060px;
+  margin-left: 0;       /* encostada ao alinhamento do texto */
+  margin-right: auto;
+}
+
+.detail-hero-image-inner img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ===== PARÁGRAFO INTRO (EM CIMA, À DIREITA) ===== */
+
+.detail-intro{
+  padding-bottom: 160px;
+}
+
+.detail-intro-inner{
+  max-width: 620px;
+  margin: 0 auto;  /* traz o texto mais para a direita, como no print */
+  font-size: 17px;
+  line-height: 1.9;
+  color: #666666;
+  font-weight: 300;
+}
+
+/* ===== BLOCO TEXTO + IMAGEM (BAIXO) ===== */
+
+.detail-detail{
+  padding-left: var(--rail);
+  padding-right: 260px;
+}
+
+.detail-detail-inner{
+  max-width: 1500px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  column-gap: 120px;
+  align-items: flex-start;
+}
+
+/* texto à esquerda */
+.detail-detail-text{
+  max-width: 460px;       /* coluna de texto mais estreita */
+}
+
+.detail-detail-text h2{
+  margin: 0 0 30px;
+  font-size: 40px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #4a4a4a;
+}
+
+.detail-detail-text ul{
+  margin: 0;
+  padding-left: 20px;
+  font-size: 17px;
+  line-height: 1.9;
+  color: #555555;
+}
+
+.detail-detail-text li{
+  margin-bottom: 10px;
+}
+
+/* imagem à direita */
+.detail-detail-image{
+  max-width: 560px;
+  justify-self: start;    /* puxa mais para a esquerda da coluna */
+  margin-top: 50px;      /* sobe um pouco para alinhar com o h2 */
+  margin-left: -200px;      /* afina a distância ao texto */
+}
+
+.detail-detail-image img{
+  display: block;
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  object-position: center center;
+}
+
+
+@media (min-width: 1200px) and (max-width: 1919px) {
+
+  /* título + primeira imagem mais para a esquerda */
+  .detail-hero{
+    padding-left: 170px;   /* antes era 260px */
+    padding-right: 260px;
+  }
+
+  /* PRIMEIRA IMAGEM — o wrapper que a contém */
+  .detail-hero-image {
+    padding-left: 170px !important;   /* antes 260px */
+  }
+
+  /* garante que a imagem não está a ser empurrada por margin */
+  .detail-hero-image img {
+    margin-left: 0 !important;
+    display: block;
+  }
+
+  /* bloco de texto “A massing model…” alinhado com o resto */
+  .detail-intro{
+    padding-left: 170px;   /* antes era 260px */
+    padding-right: 260px;
+  }
+
+  .detail-intro-inner{
+    max-width: 900px;      /* opcional: deixa o texto mais compacto */
+  }
+
+  /* secção com o texto à esquerda e a imagem à direita */
+  .detail-detail{
+    padding-left: 100px;   /* antes era 260px */
+    padding-right: 220px;
+  }
+
+  .detail-detail-inner{
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+    column-gap: 20px;    /* se quiseres o texto um pouco mais perto da imagem */
+  }
+
+  .detail-detail-image {
+    margin-left: 40px;
+    padding-top: 20px;   /* antes 260px */
+  }
+
+  /* garante que a imagem não está a ser empurrada por margin */
+  .detail-detail-image img {
+    width: 130%;
+    height: 520px;       /* volta a ser alta como no print bom */
+    object-fit: cover;   /* enche a área */
+    object-position: center; /* centra a imagem para cortar o mínimo possível */
+    display: block;
+  }
+}

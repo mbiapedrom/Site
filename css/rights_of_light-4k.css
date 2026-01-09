@@ -1,0 +1,244 @@
+/* ================================
+    CABECALHO PÁGINAS MENOS INDEX
+   ================================ */
+
+@media (min-width: 1367px){
+
+  
+
+  :root{
+    --header-h: 250px;     /* altura da barra preta */
+    --rail: 520px;         /* “coluna” do logo */
+    --nav-top: 88px;       /* posição vertical do menu (ajusta fino se precisares) */
+
+    --nav-gap: 44px;
+    --underline-h: 4px;
+  }
+
+
+  body.page-rights_of_light::before{
+    content:"";
+    position: absolute !important;
+    top:0; left:0; right:0;
+    height: var(--header-h);
+    background:#262626;
+    z-index:150;
+  }
+
+
+  body.page-rights_of_light .left-rail{
+    position: absolute !important;
+    top:0 !important;
+    left:0 !important;
+    bottom:auto !important;
+
+    height: var(--header-h) !important;
+    width: var(--rail) !important;
+
+    background: transparent !important;
+
+    display:flex !important;
+    align-items:center !important;
+    justify-content:flex-start !important;
+
+    padding: 0 !important;
+    z-index:300 !important;
+
+    overflow: visible !important;
+    min-height: 0 !important;
+  }
+
+  /* Logo MAIS à esquerda (sem desaparecer) */
+  body.page-rights_of_light .left-rail .brand{
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    display: block !important;
+  }
+
+  body.page-rights_of_light .left-rail .brand img{
+    display:block !important;
+    height: 200px !important;
+    width: auto !important;
+    margin-left: 0 !important;
+  }
+
+ 
+  body.page-rights_of_light .top-nav{
+    position: absolute !important;
+    top: var(--nav-top) !important;
+    left: calc(var(--rail) + 40px) !important;
+    right: 90px !important;
+    z-index: 310 !important;
+  }
+
+
+  body.page-rights_of_light .top-nav > ul{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:flex-end !important;
+
+    gap: var(--nav-gap) !important;
+    margin:0 !important;
+    padding:0 !important;
+    list-style:none !important;
+  }
+
+  /* Aumentar SÓ os links (exclui LOGIN e idioma) */
+  body.page-rights_of_light .top-nav > ul > li:not(.login-item):not(.lang-item) > a{
+    position: relative !important;
+    display: inline-block !important;
+
+    font-size: 27px !important;     /* aumenta os links */
+    line-height: 1 !important;
+    padding-bottom: 2px !important; /* dá espaço para a underline */
+  }
+
+  /* underline mais grossa só para links do menu */
+  body.page-rights_of_light .top-nav > ul > li:not(.login-item):not(.lang-item) > a::after{
+    height: var(--underline-h) !important;
+    bottom: -4px !important;
+  }
+
+  /* SERVICES ativo vermelho (links do menu) */
+  body.page-rights_of_light .top-nav > ul > li:not(.login-item):not(.lang-item) > a.active{
+    color:#e42323 !important;
+  }
+  body.page-rights_of_light .top-nav > ul > li:not(.login-item):not(.lang-item) > a.active::after{
+    background:#e42323 !important;
+    animation:none !important;
+    transform:scaleX(1) !important;
+  }
+
+  /* Subir só os itens do menu (não mexe nos botões) — foi o que funcionou contigo */
+  body.page-rights_of_light .top-nav > ul > li:not(.login-item):not(.lang-item){
+    transform: translateY(-8px) !important; /* ajusta -8 / -12 se precisares */
+  }
+
+
+  body.page-rights_of_light .top-nav .login-btn,
+  body.page-rights_of_light .top-nav > ul > li.lang-item .lang-current{
+    padding: 0 40px !important;
+    height: 85px !important;
+    font-size: 25px !important;
+
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    line-height: 1 !important;
+  }
+
+      .top-nav .lang-dropdown .lang-list{
+    max-height: 300px !important;
+    overflow-y: auto !important;
+
+    margin-right: -16px !important;   
+    padding-right: 0 !important;
+  }
+
+  /* não deixar underline do menu nestes botões */
+  body.page-rights_of_light .top-nav .login-btn::after,
+  body.page-rights_of_light .top-nav .lang-current::after{
+    content: none !important;
+    display: none !important;
+  }
+
+ 
+  body.page-rights_of_light .page{
+    padding-top: calc(var(--header-h) + 40px) !important;
+    padding-left: calc(var(--rail) + 40px) !important;
+  }
+
+  /* Puxa a imagem para a esquerda (porque o PNG tem espaço transparente) */
+  body.page-rights_of_light .left-rail .brand img{
+  transform: translateX(-170px) !important;  /* testa -30 / -45 / -60 */
+}
+
+    /* ================================
+            RESTO DA PÁGINA
+   ================================ */
+
+  /* wrapper principal */
+  .rights-page{
+    padding-top: 420px;     /* era 300 */
+    padding-bottom: 280px;  /* era 200 */
+  }
+
+  /* HERO */
+  .rights-hero{
+    padding-left: var(--rail);
+    padding-right: 220px;   /* era 150 */
+  }
+
+  .rights-title{
+    margin: 0 0 110px;      /* era 80 */
+    font-size: 130px;       /* era 80 */
+    line-height: 1.05;
+  }
+
+  /* imagem grande */
+  .rights-hero-image{
+    padding-left: var(--rail);
+    padding-right: 220px;   /* era 150 */
+    margin-bottom: 200px;   /* era 140 */
+  }
+
+  .rights-hero-image-inner{
+    max-width: 1650px;      /* era 1060 */
+  }
+
+  /* INTRO (texto em cima, ao centro/direita) */
+  .rights-intro{
+    padding-bottom: 240px;  /* era 160 */
+  }
+
+  .rights-intro-inner{
+    max-width: 1200px;       /* era 620 */
+    font-size: 33px;        /* era 17 */
+    line-height: 2.05;      /* era 1.9 */
+  }
+
+  /* BLOCO de baixo (texto + imagem) */
+  .rights-detail{
+    padding-left: var(--rail);
+    padding-right: 340px;   /* era 260 */
+  }
+
+  .rights-detail-inner{
+    max-width: 2000px;      /* era 1500 */
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+    column-gap: 190px;      /* era 120 */
+  }
+
+  .rights-detail-text{
+    max-width: 760px;       /* era 500 */
+  }
+
+  .rights-detail-text h2{
+    font-size: 73px;        /* era 40 */
+    margin: 0 0 50px;       /* era 30 */
+    line-height: 1.15;
+  }
+
+  .rights-detail-text ul{
+    font-size: 33px;        /* era 17 */
+    line-height: 2.05;      /* era 1.9 */
+    padding-left: 28px;     /* era 20 */
+  }
+
+  .rights-detail-text li{
+    margin-bottom: 16px;    /* era 10 */
+  }
+
+  /* imagem à direita */
+  .rights-detail-image{
+    max-width: 900px;       /* era 560 */
+    margin-top: 330px;       /* era 10 */
+    margin-left: -160px;    /* era -130 */
+  }
+
+  .rights-detail-image img{
+    height: 900px;          /* era 520 */
+  }
+}
+

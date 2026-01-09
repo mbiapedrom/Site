@@ -1,0 +1,496 @@
+:root{
+  --page-bg-services: #ffffff;
+}
+
+html{
+  overflow-x: hidden;
+}
+
+/* Página SERVICES */
+body.page-servicos{
+  background: linear-gradient(
+    #262626 0 170px,
+    var(--page-bg-services) 150px 100%);
+  color: #444444;  
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
+}
+
+.services-page{
+  padding-left: calc(var(--rail) + 80px); 
+  padding-right: 120px;
+  padding-top: 130px;                     
+  padding-bottom: 180px;
+  text-align: left;
+}
+
+.services-hero-inner{
+  max-width: 1300px;
+  margin-left: 0;
+  text-align: left;
+  margin-right: auto;
+}
+
+.services-title{
+  margin: 80px 0 50px;
+  font-size: 80px;
+  line-height: 1.05;
+  font-weight: 700;
+  color: #3f3f3f;
+  margin-left: -150px;
+  transform: translateY(100px);
+
+  position: relative;
+  display: inline-block;   /* para a linha acompanhar a largura do texto */
+  padding-bottom: 15px;
+}
+
+/* imagem grande centrada */
+.services-hero-image{
+  max-width: 1450px;
+  margin: 40px 0 40px 0;
+  margin-left: -170px;
+  position: relative;
+}
+
+.services-hero-image::after{
+  content: "";
+  position: absolute;
+  width: 70%;
+  right: 600px;
+  bottom: -100px;          
+  height: 4px;            
+  background: #e42323;    
+}
+
+.services-hero-image img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* SERVICES – barra esquerda branca nesta página */
+body.page-servicos .left-rail{
+  bottom: auto;         /* deixa de “colar” ao fundo */
+  height: auto;         /* altura só do conteúdo (logo) */
+  justify-content: flex-start; /* deixa de ficar centrado na coluna */
+  padding-left: 55px;          /* distância da borda esquerda */
+  padding-right: 0;     
+}
+
+
+.services-other{
+  margin-top: 220px;      /* espaço depois da imagem grande */
+}
+
+.services-other-inner{
+  max-width: 1300px;
+  margin: 0;              /* usa o padding da .services-page */
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;  /* esquerda maior, direita texto */
+  column-gap: 140px;
+  align-items: flex-start;
+}
+
+/* coluna esquerda */
+
+.services-other-kicker{
+  margin: 0 0 26px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: #a0a0a0;
+}
+
+.services-other-title{
+  margin: 0 0 40px;
+  font-size: 40px;
+  line-height: 1.18;
+  font-weight: 700;
+  color: #3f3f3f;
+}
+
+.services-other-list{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 16px;
+  line-height: 2;
+  color: #555;
+}
+
+/* traço antes de cada item, como no print */
+.services-other-list li{
+  position: relative;
+  padding-left: 18px;
+}
+
+.services-other-list li::before{
+  content: "–";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* coluna direita */
+
+.services-other-right p{
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.9;
+  color: #777;
+  max-width: 360px;
+  transform: translate(-250px, 220px);
+}
+
+
+.home-services{
+  background: #3f3f3f;                      /* cinzento escuro como no print */
+  color: #fff;
+  padding-top: 110px;
+  padding-bottom: 70px;
+  padding-right: 260px;
+  padding-left: 20px;   /* respeita a barra esquerda */
+}
+
+.home-services-inner{
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* "OUR SERVICES" */
+.home-services .home-kicker{
+  margin: 0 0 18px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: #b0b0b0;
+}
+
+/* "What we do" */
+.home-services-title{
+  margin: 0 0 52px;
+  font-size: 64px;
+  line-height: 1.05;
+  font-weight: 600;
+}
+
+/* layout imagem + texto */
+.home-services-body{
+  display: grid;
+  align-items: flex-start;
+  column-gap: 350px;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+}
+
+.home-services-col{
+  display: flex;
+  flex-direction: column;
+}
+
+.home-services-image{
+  width: 170%;
+  aspect-ratio: 16 / 9;   
+  overflow: hidden;
+}
+
+.home-services-image img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       
+}
+
+/* texto por cima da imagem (canto superior esquerdo) */
+.home-services-copy{
+  margin-top: 28px;
+  max-width: 360px;
+}
+
+/* título "Rights of light" */
+.home-services-copy h3{
+  margin: 0 0 18px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+/* link "Explore →" */
+.home-services-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.home-services-link .arrow-right{
+  font-size: 16px;
+  transform: translateY(-2px);   /* seta ligeiramente mais para cima */
+}
+
+.home-services-link:hover{
+  opacity: .85;
+}
+
+/* ========= BLOCO 3D DETAIL MODELING (2 IMAGENS LADO A LADO) ========= */
+
+/* ====== BLOCO 3D DETAIL MODELING – MESMO ESTILO DO WHAT WE DO ====== */
+
+.home-detail{
+  background: #3f3f3f;
+  color: #fff;
+  padding-top: 110px;
+  padding-bottom: 70px;
+  padding-right: 260px;
+  padding-left: 20px;
+}
+
+.home-detail-inner{
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.home-detail-title{
+  margin: 0 0 52px;
+  font-size: 64px;
+  line-height: 1.05;
+  font-weight: 600;
+}
+
+/* grid igual ao outro: duas imagens + texto por baixo da 1ª */
+.home-detail-grid{
+  display: grid;
+  column-gap: 350px;       /* espaço entre imagens */
+  row-gap: 28px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-areas:
+    "img1 img2"
+    "copy img2";
+  align-items: start;
+}
+
+/* imagens com mesmo tamanho */
+.detail-media{
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  width: 170%;
+}
+
+.detail-media img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+}
+
+/* posição no grid */
+.detail-media--main{
+  grid-area: img1;
+}
+
+.detail-media--secondary{
+  grid-area: img2;
+}
+
+/* texto por baixo da 1ª imagem, estilo igual ao Rights of light */
+.home-detail-copy{
+  grid-area: copy;
+  max-width: 520px;
+}
+
+.home-detail-copy h3{
+  margin: 0 0 18px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.home-detail-copy p{
+  margin: 0 0 32px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #e0e0e0;
+}
+
+/* ====== BLOCO RENDERING – IGUAL AO 3D DETAIL MODELING ====== */
+
+.home-rendering{
+  background: #3f3f3f;                 /* mesmo fundo escuro */
+  color: #fff;
+  padding-top: 110px;
+  padding-bottom: 180px;
+  padding-right: 260px;
+  padding-left: 20px;
+}
+
+.home-rendering-inner{
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.home-rendering-title{
+  margin: 0 0 52px;
+  font-size: 64px;
+  line-height: 1.05;
+  font-weight: 600;
+}
+
+/* grid: 2 imagens lado a lado + texto por baixo da 1ª */
+.home-rendering-grid{
+  display: grid;
+  column-gap: 350px;           /* espaço entre as imagens */
+  row-gap: 28px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-areas:
+    "img1 img2"
+    "copy img2";
+  align-items: start;
+}
+
+/* imagens com mesmo tamanho e corte se for preciso */
+.render-media{
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  width: 170%;
+}
+
+.render-media img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-services-image,
+.detail-media,
+.render-media {
+  width: 170%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.home-services-image img,
+.detail-media img,
+.render-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* posição no grid */
+.render-media--main{
+  grid-area: img1;
+}
+
+.render-media--secondary{
+  grid-area: img2;
+}
+
+/* texto em baixo da 1ª imagem */
+.home-rendering-copy{
+  grid-area: copy;
+  max-width: 520px;
+}
+
+.home-rendering-copy h3{
+  margin: 0 0 18px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.home-rendering-copy p{
+  margin: 0 0 32px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #e0e0e0;
+}
+
+
+/* ===========================
+   SERVICES – AJUSTE PARA PORTÁTIL (<= 1920px)
+   =========================== */
+
+@media (min-width: 1200px) and (max-width: 1919px) {
+
+  /* 1 — subir a secção */
+  .services-page {
+    padding-top: 120px;   
+    padding-left: 320px;   
+  }
+
+  /* 2 — aumentar a imagem */
+  .services-hero-image {
+    max-width: 2100px;    
+    width: 100%;
+    margin: 0 auto 80px;       
+    display: block;
+    margin-top: 100px;
+    margin-left: -150px;
+  }
+
+  .services-hero-image img {
+  width: 1000px !important;   
+  max-width: none !important; 
+  height: auto;               
+  display: block;
+}
+
+  /* 3 — linha vermelha maior e centrada */
+  .services-hero-image::after {
+    width: 90%;  
+    bottom: -30%;         
+    left: 35%;
+    transform: translateX(-50%);
+  }
+}
+
+
+/* Ajustes da secção OTHER SERVICES para portátil */
+@media (min-width: 1200px) and (max-width: 1919px) {
+
+  /* container das duas colunas */
+  .services-other-inner {
+    max-width: 1300px;
+    margin: 0 auto;
+    column-gap: 10px;
+    grid-template-columns: 1.1fr 0.7fr;
+    margin-left: -90px;
+  }
+
+  /* título demasiado grande no portátil → reduzido */
+  .services-other-title {
+    font-size: 40px;
+    line-height: 1.25;
+    max-width: 800px;
+    margin-bottom: 30px;  /* evita quebrar linhas demasiado cedo */
+  }
+
+  /* lista à esquerda */
+  .services-other-list {
+    transform: none !important;
+    margin-top: 10px; /* se o original tiver transform */
+  }
+
+  /* texto da coluna direita — problema principal */
+  .services-other-right p {
+    transform: none !important;    /* remove o translate que parte tudo */
+    margin: 0;                      /* remove margens estranhas */
+    max-width: 450px;               /* largura equilibrada para portátil */
+    font-size: 17px;                /* igual ao print bom */
+    line-height: 32px;
+    margin-top: 360px;
+    margin-left: -120px;
+  }
+  
+}
+
+
+
+
+
+

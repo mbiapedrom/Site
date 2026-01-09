@@ -1,0 +1,619 @@
+
+
+@media (max-width: 767px) {
+
+
+  :root{
+    --pad: 20px;
+  }
+
+  html, body{
+    overflow-x: hidden;
+  }
+
+  *{
+    box-sizing: border-box;
+  }
+
+  img, video{
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  body{
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  h1{ font-size: 34px; line-height: 1.1; }
+  h2{ font-size: 28px; line-height: 1.15; }
+  h3{ font-size: 22px; line-height: 1.2; }
+
+  main, .page, .container{
+    padding-left: var(--pad) !important;
+    padding-right: var(--pad) !important;
+  }
+
+  /* esconder rail desktop */
+  .left-rail{
+    display: none !important;
+  }
+
+  /* ===============================
+     MOBILE TOPBAR
+     =============================== */
+
+  .mobile-topbar{
+    display: block !important;
+    position: static;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+
+    height: 120px;
+    background: #262626;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+
+    /* referência para os absolutos */
+    overflow: visible;
+  }
+
+  body{
+    padding-top: 120px;
+  }
+
+  /* botão menu ☰ */
+  .mobile-menu-btn{
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    left: 14px;
+    top: 60px;
+
+    width: 44px;
+    height: 44px;
+
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+
+    color: #fff;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 10001;
+  }
+
+  /* logo centrado */
+  .mobile-logo{
+    position: absolute;
+    left: 50%;
+    top: 25px;
+    transform: translateX(-50%);
+  }
+
+  .mobile-logo img{
+    height: 80px;
+    width: auto;
+  }
+
+  /* ===============================
+     AÇÕES TOPO (LOGIN + IDIOMA)
+     =============================== */
+
+  .mobile-actions{
+    display: block;
+  }
+
+  /* login */
+  .mobile-login{
+    position: absolute;
+    left: 14px;
+    top: 14px;
+
+    padding: 8px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+
+    color: #fff;
+    background: rgba(0,0,0,0.14);
+    border: 1px solid rgba(255,255,255,0.22);
+    z-index: 10001;
+  }
+
+  /* ===============================
+     LANG SWITCHER (MOBILE)
+     =============================== */
+
+  .mobile-topbar .lang-switcher{
+    position: absolute;
+    right: 14px;
+    top: 14px;
+    z-index: 10002;
+  }
+
+  .mobile-topbar .lang-current{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    height: 38px;
+    padding: 10px 14px;
+
+    background: rgba(0,0,0,0.14);
+    border: 1px solid rgba(255,255,255,0.22);
+    
+
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .mobile-topbar .lang-flag{
+    width: 18px;
+    height: 18px;
+  }
+
+  .mobile-topbar .lang-code{
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  /* dropdown */
+  .mobile-topbar .lang-dropdown{
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 42px;
+
+    width: 220px;
+    max-height: 60vh;
+    overflow-y: auto;
+
+    background: #1e1e1e;
+    border: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+
+    z-index: 10003;
+  }
+
+
+  .lang-list {
+  max-height: 143px;          /* afina para ficar até ITALIANO */
+}
+
+  /* 🔑 ESTA LINHA FAZ O IDIOMA ABRIR */
+  .mobile-topbar .lang-switcher.is-open .lang-dropdown{
+    display: block;
+  }
+
+  .mobile-topbar .lang-current{
+  transition: background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.mobile-topbar .lang-current:active{
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.35);
+}
+
+.mobile-topbar .lang-dropdown{
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.mobile-topbar .lang-switcher.is-open .lang-dropdown{
+  opacity: 1;
+  transform: translateY(0);
+}
+  
+
+  /* ===============================
+     MENU MOBILE
+     =============================== */
+
+.top-nav ul{
+display: block !important;
+  position: fixed !important;
+  left: 45% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+
+  opacity: 0 !important;
+  pointer-events: none !important;
+
+  z-index: 10002 !important;
+}
+
+
+body.menu-open .top-nav ul{
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+.top-nav{
+  position: relative; /* necessário para o ::before ficar controlado */
+  z-index: 10002;     /* base do menu */
+}
+
+body.menu-open .top-nav::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 10001;
+}
+
+ .top-nav ul li{
+  border: 0 !important;
+  margin: 0 0 16px 0 !important;
+  padding: 0 !important;
+  text-align: center !important;
+}
+
+
+.top-nav ul a{
+  text-decoration: none !important;
+  border-bottom: 0 !important;
+  box-shadow: none !important;
+  background-image: none !important;
+  width: fit-content !important;
+  margin: 0 auto !important;
+
+  font-weight: 800 !important;
+  font-size: 20px !important;
+  letter-spacing: .12em !important;
+  text-transform: uppercase !important;
+  color: #fff !important;
+}
+
+  .top-nav ul a:hover,
+  .top-nav ul a:active{
+  background: transparent !important;
+  opacity: 1 !important;
+}
+
+.top-nav ul a::before,
+.top-nav ul a::after{
+  content: none !important;
+}
+
+
+.top-nav ul a.active{
+  color: #e42323 !important;
+  position: relative !important;
+  font-weight: 900 !important;
+}
+
+.top-nav ul a.active::after{
+  content:"" !important;
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: -2px !important;     /* mais pegada ao texto */
+  height: 4px !important;
+  background: #e42323 !important;
+  border-radius: 2px !important;
+}
+
+/* garante botões do topo acima do overlay */
+.mobile-menu-btn,
+.mobile-login,
+.mobile-topbar .lang-switcher{
+  z-index: 10004 !important;
+}
+
+  /* esconder login/idioma do menu no mobile */
+  .top-nav .login-item,
+  .top-nav .lang-item{
+    display: none !important;
+  }
+
+  /* ===============================
+     OUTROS
+     =============================== */
+
+  .btn,
+  input[type="submit"]{
+    width: 100%;
+    max-width: 420px;
+  }
+
+  input, textarea, select{
+    width: 100%;
+    max-width: 100%;
+  }
+
+  footer{
+    padding: 50px var(--pad) !important;
+  }
+
+  .footer-inner{
+    display: block !important;
+  }
+
+  .full-bleed{
+    width: 100vw !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+
+.site-footer{
+  background: #262626 !important;
+  color: #d5d5d5 !important;
+  padding: 44px var(--pad) 26px !important;
+}
+
+/* hover vermelho nos links de contactos (mobile + desktop) */
+.site-footer .footer-address a{
+  color: rgba(255,255,255,.9) !important;
+  text-decoration: none !important;
+  transition: color .2s ease, opacity .2s ease !important;
+}
+
+.site-footer .footer-address a:hover,
+.site-footer .footer-address a:focus{
+  color: #e42323 !important;
+  opacity: 0.95 !important;
+  font-weight: 700 !important;
+}
+
+
+.footer-inner{ max-width: none !important; margin: 0 !important; }
+
+/* 1 coluna */
+.footer-contact-block{ display: block !important; }
+
+/* ---------- TOP: título + contactos ---------- */
+
+.footer-kicker{
+  font-size: 11px !important;
+  letter-spacing: .22em !important;
+  text-transform: uppercase !important;
+  color: rgba(255,255,255,.55) !important;
+  margin: 0 0 10px 0 !important;
+}
+
+.footer-title{
+  font-size: 55px !important;
+  line-height: 1.05 !important;
+  color: rgba(255,255,255,.38) !important;   /* menos pesado */
+  margin: 0 0 16px 0 !important;
+}
+
+/* contactos com “ritmo” */
+.footer-address{
+  margin-top: 10px !important;
+}
+
+.footer-address p{
+  margin: 0 0 12px 0 !important;
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+  color: rgba(255,255,255,.82) !important;
+}
+
+.footer-address a{
+  color: rgba(255,255,255,.9) !important;
+  text-decoration: none !important;
+}
+
+/* ---------- BODY: texto longo (menos dominante) ---------- */
+
+.footer-col-right{ margin-top: 18px !important; }
+
+.footer-col-right p{
+  font-size: 13px !important;
+  line-height: 1.75 !important;
+  color: rgba(255,255,255,.62) !important;
+  margin: 0 0 12px 0 !important;
+  max-width: 42ch !important;    /* leitura boa */
+}
+
+/* ---------- CTA: o foco (bonito e centrado) ---------- */
+
+.footer-cta{
+  margin-top: 18px !important;
+
+  width: 100% !important;            /* CTA “principal” */
+  max-width: 420px !important;
+
+  padding: 6px 2px !important;
+  border: 1.5px solid rgba(228,35,35,.9) !important;
+  border-radius: 14px !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+
+  font-size: 13px !important;
+  letter-spacing: .20em !important;
+  font-weight: 800 !important;
+
+  background: rgba(0,0,0,.12) !important;  /* dá corpo sem “peso” */
+  color: #fff !important;
+}
+
+/* ---------- DIVIDER ---------- */
+
+.footer-bottom{
+  position: relative !important;
+  margin-top: 24px !important;
+  padding-top: 18px !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 20px !important;
+}
+
+/* linha divisória */
+.footer-bottom::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(255,255,255,.08);
+}
+
+/* =========================
+   BLOCO 1 — LOGO + LEGAL
+   ========================= */
+
+.footer-bottom-left{
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  gap: 10px !important;
+  padding-top: 8px !important;
+}
+
+/* logo 3DSCAN2CAD maior e centrado */
+.footer-mini-logo{
+  display: block !important;
+  height: 55px !important;
+  width: auto !important;
+  margin: 0 auto !important;
+  opacity: .95 !important;
+}
+
+/* linha legal numa só linha */
+.footer-legal{
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 6px !important;
+
+  font-size: 10px !important;
+  line-height: 1.4 !important;
+  color: rgba(255,255,255,.55) !important;
+}
+
+/* marca */
+.footer-brand{
+  color: #e42323 !important;
+  font-weight: 800 !important;
+  text-decoration: none !important;
+}
+
+/* PRIVACY POLICY — pequeno + hover vermelho */
+.footer-link{
+  font-size: 10px !important;
+  letter-spacing: .14em !important;
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+
+  color: rgba(255,255,255,.55) !important;
+  text-decoration: none !important;
+
+  transition: color .2s ease, opacity .2s ease !important;
+}
+
+.footer-link:hover,
+.footer-link:focus{
+  color: #e42323 !important;
+  opacity: .95 !important;
+}
+
+/* =========================
+   BLOCO 2 — SUPREME (CENTRO)
+   ========================= */
+
+.footer-bottom-right{
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  gap: 10px !important;
+}
+
+/* supreme logo */
+.footer-design{
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.footer-design-logo{
+  display: block !important;
+  height: 50px !important;
+  width: auto !important;
+  margin: 0 auto !important;
+  opacity: .92 !important;
+}
+
+.footer-design-caption{
+  font-size: 9px !important;
+  letter-spacing: .18em !important;
+  text-transform: uppercase !important;
+  color: rgba(255,255,255,.35) !important;
+  margin: 0 !important;
+  text-align: center !important;
+}
+
+/* =========================
+   BLOCO 3 — SOCIAIS
+   ========================= */
+
+.footer-social{
+  display: flex !important;
+  justify-content: center !important;
+  gap: 14px !important;
+  margin: 0 !important;
+  margin-top: 10px !important;  
+}
+
+.footer-social-link{
+  font-size: 18px !important;
+  color: rgba(255,255,255,.55) !important;
+  text-decoration: none !important;
+  transition: color .2s ease, transform .15s ease !important;
+}
+
+.footer-social-link:hover{
+  color: #e42323 !important;
+  transform: translateY(-1px);
+}
+
+/* segurança total contra CSS desktop */
+.footer-bottom *,
+.footer-bottom *::before,
+.footer-bottom *::after{
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  transform: none !important;
+}
+
+
+/* BOTAO */
+
+  .btn-topo-header{
+    display: none !important;
+  }
+}
+
+
+
+

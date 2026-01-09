@@ -1,0 +1,376 @@
+/* ================================
+    CABECALHO PÁGINAS MENOS INDEX
+   ================================ */
+
+@media (min-width: 1367px){
+
+  
+
+  :root{
+    --header-h: 250px;     /* altura da barra preta */
+    --rail: 520px;         /* “coluna” do logo */
+    --nav-top: 88px;       /* posição vertical do menu (ajusta fino se precisares) */
+
+    --nav-gap: 44px;
+    --underline-h: 4px;
+  }
+
+
+  body.page-sobre::before{
+    content:"";
+    position: absolute !important;
+    top:0; left:0; right:0;
+    height: var(--header-h);
+    background:#262626;
+    z-index:150;
+  }
+
+
+  body.page-sobre .left-rail{
+    position: absolute !important;
+    top:0 !important;
+    left:0 !important;
+    bottom:auto !important;
+
+    height: var(--header-h) !important;
+    width: var(--rail) !important;
+
+    background: transparent !important;
+
+    display:flex !important;
+    align-items:center !important;
+    justify-content:flex-start !important;
+
+    padding: 0 !important;
+    z-index:300 !important;
+
+    overflow: visible !important;
+    min-height: 0 !important;
+  }
+
+  /* Logo MAIS à esquerda (sem desaparecer) */
+  body.page-sobre .left-rail .brand{
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    display: block !important;
+  }
+
+  body.page-sobre .left-rail .brand img{
+    display:block !important;
+    height: 200px !important;
+    width: auto !important;
+    margin-left: 0 !important;
+  }
+
+ 
+  body.page-sobre .top-nav{
+    position: absolute !important;
+    top: var(--nav-top) !important;
+    left: calc(var(--rail) + 40px) !important;
+    right: 90px !important;
+    z-index: 310 !important;
+  }
+
+
+  body.page-sobre .top-nav > ul{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:flex-end !important;
+
+    gap: var(--nav-gap) !important;
+    margin:0 !important;
+    padding:0 !important;
+    list-style:none !important;
+  }
+
+  /* Aumentar SÓ os links (exclui LOGIN e idioma) */
+  body.page-sobre .top-nav > ul > li:not(.login-item):not(.lang-item) > a{
+    position: relative !important;
+    display: inline-block !important;
+
+    font-size: 27px !important;     /* aumenta os links */
+    line-height: 1 !important;
+    padding-bottom: 2px !important; /* dá espaço para a underline */
+  }
+
+  /* underline mais grossa só para links do menu */
+  body.page-sobre .top-nav > ul > li:not(.login-item):not(.lang-item) > a::after{
+    height: var(--underline-h) !important;
+    bottom: -4px !important;
+  }
+
+  /* SERVICES ativo vermelho (links do menu) */
+  body.page-sobre .top-nav > ul > li:not(.login-item):not(.lang-item) > a.active{
+    color:#e42323 !important;
+  }
+  body.page-sobre .top-nav > ul > li:not(.login-item):not(.lang-item) > a.active::after{
+    background:#e42323 !important;
+    animation:none !important;
+    transform:scaleX(1) !important;
+  }
+
+  /* Subir só os itens do menu (não mexe nos botões) — foi o que funcionou contigo */
+  body.page-sobre .top-nav > ul > li:not(.login-item):not(.lang-item){
+    transform: translateY(-8px) !important; /* ajusta -8 / -12 se precisares */
+  }
+
+
+  body.page-sobre .top-nav .login-btn,
+  body.page-sobre .top-nav > ul > li.lang-item .lang-current{
+    padding: 0 40px !important;
+    height: 80px !important;
+    font-size: 25px !important;
+
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    line-height: 1 !important;
+  }
+
+  /* não deixar underline do menu nestes botões */
+  body.page-sobre .top-nav .login-btn::after,
+  body.page-sobre .top-nav .lang-current::after{
+    content: none !important;
+    display: none !important;
+  }
+
+       .top-nav .lang-dropdown .lang-list{
+    max-height: 300px !important;
+    overflow-y: auto !important;
+
+    margin-right: -16px !important;   
+    padding-right: 0 !important;
+  }
+
+ 
+  body.page-sobre .page{
+    padding-top: calc(var(--header-h) + 40px) !important;
+    padding-left: calc(var(--rail) + 40px) !important;
+  }
+
+  /* Puxa a imagem para a esquerda (porque o PNG tem espaço transparente) */
+  body.page-sobre .left-rail .brand img{
+  transform: translateX(-170px) !important;  /* testa -30 / -45 / -60 */
+}
+
+    /* ================================
+            RESTO DA PÁGINA
+   ================================ */
+
+  :root{
+    --page-bg-about: #ffffff;
+  }
+
+  html{
+    overflow-x: hidden;
+  }
+
+  /* =========================
+     FUNDO + TIPOGRAFIA
+     ========================= */
+  body.page-sobre{
+    background: linear-gradient(
+      #262626 0 170px,
+      var(--page-bg-about) 150px 100%);
+    color: #444444;
+    font-family: -apple-system, BlinkMacSystemFont, "Inter",
+                 "Segoe UI", Roboto, sans-serif;
+  }
+
+  /* =========================
+     LEFT RAIL (IGUAL A SERVICES)
+     ========================= */
+  body.page-sobre .left-rail{
+    bottom: auto;
+    height: auto;
+    justify-content: flex-start;
+    padding-left: 55px;
+    padding-right: 0;
+  }
+
+  /* =========================
+     MAIN WRAPPER
+     ========================= */
+  .about-page{
+    padding-top: 400px;
+    padding-bottom: 0;
+  }
+
+  /* =========================
+     TÍTULO
+     ========================= */
+  .about-hero{
+    padding-left: var(--rail);
+  }
+
+  .about-title{
+    margin: 0 0 60px;
+    font-size: 125px;          /* ↑ 4K */
+    line-height: 1.05;
+    font-weight: 700;
+    color: #3f3f3f;
+    margin-left: -150px;
+  }
+
+  /* =========================
+     VÍDEO / IMAGEM PRINCIPAL
+     ========================= */
+  .about-hero-video{
+    margin-top: 80px;
+    padding-left: calc(var(--rail) - 150px);
+    padding-right: 500px;
+    background: #ffffff;
+  }
+
+  .about-hero-video-inner{
+    max-width: 1900px;
+    margin: 0 auto;
+  }
+
+  .about-video{
+    display: block;
+    width: 110%;
+    height: auto;
+    margin-left: auto;
+    margin-right: 0;
+    object-fit: contain;
+    background: #262626;
+  }
+
+  /* =========================
+     TEXTO INTRO
+     ========================= */
+  .about-intro{
+    padding-top: 160px;
+    padding-bottom: 100px;
+  }
+
+  .about-intro-inner{
+    max-width: 900px;         /* ↑ largura */
+    margin: 0 auto;
+    font-size: 32px;          /* ↑ texto */
+    line-height: 2.0;
+    color: #555;
+  }
+
+  /* =========================
+     BLOCOS (OUR MISSION / THE SOLUTION)
+     ========================= */
+  .about-block{
+    padding-top: 160px;
+    padding-bottom: 10px;
+  }
+
+  .about-block-inner{
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .about-block-title{
+    margin: 0 0 40px;
+    font-size: 85px;          /* ↑ título */
+    line-height: 1.2;
+    font-weight: 700;
+    color: #3f3f3f;
+  }
+
+  .about-block p{
+    margin: 0;
+    font-size: 29px;
+    line-height: 1.9;
+    color: #555;
+  }
+
+  /* OUR MISSION — alinhado à esquerda */
+  .about-mission{
+    padding-left: calc(var(--rail) + 40px);
+  }
+
+  .about-mission .about-block-inner{
+    max-width: 650px;
+    margin: 0;
+  }
+
+  /* THE SOLUTION — deslocado à direita */
+  .about-solution{
+    padding-top: 20px;
+    margin-bottom: 180px;
+  }
+
+  .about-solution .about-block-inner{
+    transform: translateX(320px); /* afinado para 4K */
+  }
+
+  /* =========================
+     IMAGEM ENTRE BLOCOS
+     ========================= */
+  .about-image-block{
+    padding-top: 40px;
+    padding-bottom: 20px;
+  }
+
+  .about-image-inner{
+    max-width: 1900px;
+    margin: 0 auto;
+  }
+
+  .about-image-inner img{
+    display: block;
+    width: 120%;
+    height: auto;
+  }
+
+  /* =========================
+     MEET THE TEAM
+     ========================= */
+  .about-team{
+    padding-top: 120px;
+    padding-bottom: 160px;
+    background: #f6f6f6;
+  }
+
+  .about-team-inner{
+    max-width: 1250px;
+    margin-left: calc(var(--rail) + 140px);
+    margin-right: auto;
+    padding-right: 190px;
+  }
+
+  .about-team-title{
+    margin: 0 0 70px;
+    font-size: 85px;
+    line-height: 1.2;
+    font-weight: 700;
+    color: #3f3f3f;
+  }
+
+  .about-team-grid{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 215px;
+    row-gap: 80px;
+  }
+
+  .team-card img{
+    display: block;
+    width: 180%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 16px;
+  }
+
+  .team-name{
+    margin: 0 0 6px;
+    font-size: 34px;
+    font-weight: 500;
+    color: #555;
+  }
+
+  .team-role{
+    margin: 0;
+    font-size: 28px;
+    color: #b0b0b0;
+  }
+}
+

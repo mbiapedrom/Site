@@ -1,0 +1,396 @@
+@media (min-width: 768px) and (max-width: 1199px) {
+
+.mobile-topbar{
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+  height: 10px !important;  
+  box-shadow: none !important;
+}
+
+
+.mobile-logo img{ height: 120px; width: auto; }
+
+.mobile-menu-btn{
+    left: 14px;
+    top: 100px;
+    width: 80px;
+    height: 80px;
+  }
+
+    .mobile-login{
+    left: 18px;
+    top: 14px;
+    padding: 16px 22px;
+    font-size: 15px;
+  }
+
+  .mobile-topbar .lang-current{
+    padding: 16px 24px !important;
+    font-size: 15px !important;
+    height: 50px !important;
+  }
+
+    .mobile-topbar .lang-flag{
+    width: 21px !important;
+    height: 21px !important;
+  }
+
+    .lang-code{
+    font-size: 16px;
+  }
+
+  
+  body.page-servicos .left-rail{
+    display: none !important;
+  }
+
+
+  /* ==========================================================
+     PAGE WRAPPER
+     ========================================================== */
+
+  .services-page{
+    padding: 70px var(--pad) 80px !important;
+    text-align: left !important;
+  }
+
+  .services-hero-inner{
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+
+  /* ==========================================================
+     TITLE (hero)
+     ========================================================== */
+
+  .services-title{
+    margin: 22px 0 18px !important;
+    font-size: 55px !important;
+    line-height: 1.08 !important;
+
+    margin-left: 0 !important;
+    transform: none !important;
+    padding-bottom: 0 !important;
+  }
+
+  .services-title::after{
+    content: none !important;
+    display: none !important;
+  }
+
+
+  /* ==========================================================
+     HERO IMAGE
+     ========================================================== */
+
+  .services-hero-image{
+    max-width: none !important;
+    margin: 18px 0 22px !important;
+    position: relative !important;
+  }
+
+  .services-hero-image::after{
+    content: none !important;
+    display: none !important;
+  }
+
+  .services-hero-image img{
+    width: 100% !important;
+    height: auto !important;
+    border-radius: var(--radius) !important;
+    display: block !important;
+  }
+
+
+  /* ==========================================================
+     OTHER SERVICES (1 COLUNA)
+     ========================================================== */
+
+  .services-other{
+    margin-top: 70px !important;
+  }
+
+.services-other-inner{
+  max-width: none !important;
+  margin: 0 !important;
+
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important; /* lista | texto */
+  column-gap: 48px !important;
+  align-items: start !important;
+}
+
+  .services-other-kicker{
+    font-size: 11px !important;
+    margin: 0 0 10px !important;
+    letter-spacing: .18em !important;
+  }
+
+  .services-other-title{
+    font-size: 28px !important;
+    margin: 0 0 36px !important;
+    line-height: 1.15 !important;
+  }
+
+  .services-other-list{
+    font-size: 16px !important;
+    line-height: 1.9 !important;
+  }
+
+   .services-other,
+  .services-other-inner{
+    position: relative !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    clear: both !important;
+  }
+
+  /* o texto tem de estar no fluxo, nada de absolute */
+.services-other-right{
+  position: static !important;
+  float: none !important;
+  transform: none !important;
+
+  width: auto !important;
+  max-width: none !important;
+
+  margin: 0 !important;   /* 🔑 para ficar ao lado */
+  padding: 0 !important;
+
+  margin-top: 270px !important;
+  margin-right: 60px !important;
+}
+
+  /* parágrafos: também no fluxo */
+  .services-other-right p{
+    position: static !important;
+    float: none !important;
+    transform: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    font-size: 15px !important;
+    line-height: 1.8 !important;
+  }
+
+  /* “cinto de segurança”: se algo estiver a ficar absolute dentro */
+  .services-other *{
+    max-height: none !important;
+  }
+
+
+    .home-services,
+  .home-detail,
+  .home-rendering{
+    background: #3f3f3f !important;
+    color: #fff !important;
+
+    padding: 46px var(--pad) 60px !important;
+    padding-left: var(--pad) !important;
+    padding-right: var(--pad) !important;
+  }
+
+  .home-services-inner,
+  .home-detail-inner,
+  .home-rendering-inner{
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  .home-services-title,
+  .home-detail-title,
+  .home-rendering-title{
+    margin: 0 0 18px !important;
+    font-size: 38px !important;
+    line-height: 1.08 !important;
+    font-weight: 700 !important;
+  }
+
+  .home-services .home-kicker{
+    margin: 0 0 10px !important;
+    font-size: 12px !important;
+    letter-spacing: .18em !important;
+  }
+
+  /* ==========================================================
+     WHAT WE DO
+     ORDEM: imagem 1 → imagem 2 → texto
+     ========================================================== */
+
+  .home-services-body{
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-areas:
+      "img1"
+      "img2"
+      "copy" !important;
+    gap: 14px !important;
+  }
+
+  .home-services-col{
+    display: contents !important;
+  }
+
+  .home-services-col:first-child .home-services-image{
+    grid-area: img1 !important;
+  }
+
+  .home-services-col:nth-child(2) .home-services-image{
+    grid-area: img2 !important;
+  }
+
+  .home-services-col:first-child .home-services-copy{
+    grid-area: copy !important;
+  }
+
+  .home-services-image{
+    width: 100% !important;
+    aspect-ratio: 16 / 9 !important;
+    border-radius: 13px !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+  }
+
+  .home-services-image img{
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+
+  .home-services-copy{
+    margin: 2px 0 0 0 !important;
+    max-width: none !important;
+  }
+
+  .home-services-copy h3{
+    font-size: 27px !important;
+    margin: 0 0 10px !important;
+  }
+
+  .home-services-link{
+    font-size: 14px !important;
+    letter-spacing: .16em !important;
+  }
+
+  /* ==========================================================
+     3D DETAIL MODELING
+     ORDEM: imagem 1 → imagem 2 → texto
+     ========================================================== */
+
+  .home-detail-grid{
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-areas:
+      "img1"
+      "img2"
+      "copy" !important;
+    gap: 14px !important;
+  }
+
+  .home-detail-grid .detail-media:nth-of-type(1){
+    grid-area: img1 !important;
+  }
+
+  .home-detail-grid .detail-media:nth-of-type(2){
+    grid-area: img2 !important;
+  }
+
+  .home-detail-grid .home-detail-copy{
+    grid-area: copy !important;
+  }
+
+  .detail-media{
+    width: 100% !important;
+    border-radius: 13px !important;
+    overflow: hidden !important;
+  }
+
+  .detail-media img{
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+
+  .home-detail-copy{
+    max-width: none !important;
+  }
+
+  .home-detail-copy h3{
+    font-size: 27px !important;
+    margin: 0 0 10px !important;
+  }
+
+  .home-detail-copy p{
+    font-size: 14px !important;
+    line-height: 1.75 !important;
+    margin: 0 0 12px !important;
+    color: rgba(255,255,255,.78) !important;
+  }
+
+  /* ==========================================================
+     RENDERING
+     ORDEM: imagem 1 → imagem 2 → texto
+     ========================================================== */
+
+  .home-rendering{
+    padding-bottom: 70px !important;
+  }
+
+  .home-rendering-grid{
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-areas:
+      "img1"
+      "img2"
+      "copy" !important;
+    gap: 14px !important;
+  }
+
+  .home-rendering-grid .render-media:nth-of-type(1){
+    grid-area: img1 !important;
+  }
+
+  .home-rendering-grid .render-media:nth-of-type(2){
+    grid-area: img2 !important;
+  }
+
+  .home-rendering-grid .home-rendering-copy{
+    grid-area: copy !important;
+  }
+
+  .render-media{
+    width: 100% !important;
+    border-radius: 13px !important;
+    overflow: hidden !important;
+  }
+
+  .render-media img,
+  .render-media video{
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+
+  .home-rendering-copy{
+    max-width: none !important;
+  }
+
+  .home-rendering-copy h3{
+    font-size: 27px !important;
+    margin: 0 0 10px !important;
+  }
+
+  .home-rendering-copy p{
+    font-size: 14px !important;
+    line-height: 1.75 !important;
+    margin: 0 0 12px !important;
+    color: rgba(255,255,255,.78) !important;
+  }
+
+}

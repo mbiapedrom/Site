@@ -1,0 +1,117 @@
+:root{
+  --page-bg-privacy: #ffffff;
+}
+
+html{
+  overflow-x: hidden;
+}
+
+/* FUNDO E TEXTO GERAL DA PÁGINA */
+body.page-politica_privacidade{
+  background: linear-gradient(
+    #262626 0 170px,
+    var(--page-bg-privacy) 150px 100%);
+  color: #444444;
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI",
+               Roboto, sans-serif;
+}
+
+/* barra esquerda branca, igual a SERVICES / ABOUT */
+body.page-politica_privacidade .left-rail{
+  bottom: auto;
+  height: auto;
+  justify-content: flex-start;
+  padding-left: 55px;
+  padding-right: 0;
+}
+
+/* MAIN WRAPPER */
+.privacy-page{
+  padding-top: 300px;     /* descola do topo / menu */
+  padding-bottom: 160px;
+}
+
+/* TÍTULO "Privacy Policy" */
+.privacy-hero{
+  padding-left: var(--rail);
+}
+
+.privacy-title{
+  margin: 0 0 80px;
+  font-size: 80px;
+  line-height: 1.05;
+  font-weight: 700;
+  color: #4a4a4a;
+}
+
+/* BLOCO DE CONTEÚDO */
+.privacy-content{
+  padding-left: var(--rail);
+  padding-right: 220px;   /* espaço à direita como no print */
+}
+
+.privacy-inner{
+  max-width: 1150px;       /* largura de coluna do texto */
+  margin: 0;              /* alinhado à esquerda */
+}
+
+/* subtítulos tipo “Who we are”, “Comments”, etc. */
+.privacy-inner h2{
+  margin: 60px 0 12px;
+  font-size: 40px;
+  line-height: 1.4;
+  font-weight: 700;
+  color: #4a4a4a;
+}
+
+/* parágrafos */
+.privacy-inner p{
+  margin: 0 0 18px;
+  font-size: 17px;
+  line-height: 2.0;
+  color: #666666;
+  font-weight: 300;
+}
+
+/* links dentro do texto da privacy */
+.privacy-inner a{
+  color: inherit;           /* usa a mesma cor do texto */
+  text-decoration: none; 
+  transition: color .2s ease;   /* tira o sublinhado */
+}
+
+/* se quiseres um efeito no hover */
+.privacy-inner a:hover{
+  color: #aaaaaa;
+  text-decoration: none;   /* ou deixa vazio se não quiseres nada */
+}
+
+
+@media (min-width: 1200px) and (max-width: 1919px) {
+
+  /* Título “Privacy Policy” */
+  .privacy-hero{
+    padding-left: 190px !important;   /* antes var(--rail) */
+  }
+
+  /* Conteúdo inteiro */
+  .privacy-content{
+    padding-left: 190px !important;   /* igual ao resto do site */
+    padding-right: 200px;             /* espaço à direita */
+  }
+
+  /* Largura da coluna do texto */
+  .privacy-inner{
+    max-width: 1000px;  /* opcional — deixa a leitura melhor */
+  }
+
+  /* Subtítulos */
+  .privacy-inner h2{
+    margin-left: 0;  /* garante alinhamento total */
+  }
+
+  /* Parágrafos */
+  .privacy-inner p{
+    margin-left: 0;
+  }
+}

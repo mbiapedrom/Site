@@ -1,0 +1,390 @@
+/* index-mobile.css — apenas HOME (index.php) */
+@media (max-width: 767px) {
+
+  :root{
+    --rail: 0px;
+    --hero-h: calc(100vh - 70px);
+    --pad: 20px;
+    --radius: 14px;
+  }
+  
+
+  html, body { overflow-x: hidden; }
+  img, video { max-width: 100%; height: auto; display: block; }
+
+  /* =========================
+     HERO (full-bleed)
+     ========================= */
+  .hero-slider{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    width: 100vw !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+  }
+
+  .slider-viewport{
+    width: 100vw !important;
+    height: var(--hero-h);
+  }
+
+  .slider-viewport img,
+  .slider-viewport video{
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+  }
+
+  .caption{
+    left: var(--pad);
+    right: var(--pad);
+    top: auto;
+    bottom: 80px;
+  }
+
+  .caption h1{
+    font-size: 36px;
+    line-height: 1.1;
+  }
+
+  /* =========================
+     ABOUT
+     ========================= */
+  .home-about{ padding: 64px var(--pad); }
+
+  .home-about-body{ display: block; }
+
+  .home-about-media{
+    width: 110%;
+    margin-bottom: 25px;
+  }
+
+  .home-about-copy{ max-width: none; }
+
+  .home-about h2{
+    font-size: 32px;
+    line-height: 1.15;
+    margin: 0 0 12px 0;
+  }
+
+  .home-about p{
+    font-size: 13px;
+    line-height: 1.65;
+    margin: 0 0 12px 0;
+  }
+
+  .home-about h3{
+    font-size: 16px;
+    line-height: 1.35;
+    margin: 0 0 10px 0;
+  }
+
+  /* =========================
+     Imagens (mata o width:170% do desktop)
+     ========================= */
+  .home-services,
+  .home-detail,
+  .home-rendering{
+    background: #3f3f3f !important;
+    color: #fff !important;
+
+    padding: 46px var(--pad) 60px !important;
+    padding-left: var(--pad) !important;
+    padding-right: var(--pad) !important;
+  }
+
+  .home-services-inner,
+  .home-detail-inner,
+  .home-rendering-inner{
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  .home-services-title,
+  .home-detail-title,
+  .home-rendering-title{
+    margin: 0 0 18px !important;
+    font-size: 34px !important;
+    line-height: 1.08 !important;
+    font-weight: 700 !important;
+  }
+
+  .home-services .home-kicker{
+    margin: 0 0 10px !important;
+    font-size: 11px !important;
+    letter-spacing: .18em !important;
+  }
+
+  /* ===== WHAT WE DO ===== */
+  .home-services-body{
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-areas:
+      "img1"
+      "img2"
+      "copy" !important;
+    gap: 14px !important;
+    column-gap: 0 !important;
+  }
+
+  .home-services-col{
+    display: contents !important;
+  }
+
+  .home-services-col:first-child .home-services-image{ grid-area: img1; }
+  .home-services-col:nth-child(2) .home-services-image{ grid-area: img2; }
+  .home-services-col:first-child .home-services-copy{ grid-area: copy; }
+
+  .home-services-image{
+    width: 100% !important;           /* 🔑 adeus 170% */
+    aspect-ratio: 16 / 9 !important;
+    border-radius: var(--radius) !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+  }
+
+  .home-services-copy{
+    margin: 2px 0 0 0 !important;
+    max-width: none !important;
+  }
+
+  .home-services-copy h3{
+    font-size: 22px !important;
+    margin: 0 0 10px !important;
+  }
+
+  .home-services-link{
+    font-size: 12px !important;
+    letter-spacing: .16em !important;
+  }
+
+  /* ===== DETAIL MODELING ===== */
+  .home-detail-grid{
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-areas:
+      "img1"
+      "img2"
+      "copy" !important;
+    gap: 14px !important;
+    column-gap: 0 !important;
+    row-gap: 14px !important;
+  }
+
+  .detail-media{
+    width: 100% !important;          /* 🔑 adeus 170% */
+    border-radius: var(--radius) !important;
+    overflow: hidden !important;
+  }
+
+  .home-detail-copy{
+    max-width: none !important;
+  }
+
+  .home-detail-copy h3{
+    font-size: 22px !important;
+    margin: 0 0 10px !important;
+  }
+
+  .home-detail-copy p{
+    font-size: 13px !important;
+    line-height: 1.75 !important;
+    margin: 0 0 12px !important;
+    color: rgba(255,255,255,.78) !important;
+  }
+
+  /* ===== RENDERING ===== */
+  .home-rendering{
+    padding-bottom: 150px !important;
+  }
+
+  .home-rendering-grid{
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-areas:
+      "img1"
+      "img2"
+      "copy" !important;
+    gap: 14px !important;
+    column-gap: 0 !important;
+    row-gap: 14px !important;
+  }
+
+  .render-media{
+    width: 100% !important;          /* 🔑 adeus 170% */
+    border-radius: var(--radius) !important;
+    overflow: hidden !important;
+  }
+
+  .home-rendering-copy{
+    max-width: none !important;
+  }
+
+  .home-rendering-copy h3{
+    font-size: 22px !important;
+    margin: 0 0 10px !important;
+  }
+
+  .home-rendering-copy p{
+    font-size: 13px !important;
+    line-height: 1.75 !important;
+    margin: 0 0 12px !important;
+    color: rgba(255,255,255,.78) !important;
+  }
+  /* =========================
+     TESTIMONIALS
+     ========================= */
+  .home-testimonials{ padding: 56px var(--pad) 60px !important;}
+  .home-testimonials-body{ display: block; }
+
+  .home-testimonials-title{
+    font-size: 36px;
+    line-height: 1.1;
+  }
+
+  .home-testimonials-nav{
+    transform: none;
+    margin-left: 0;
+    margin-top: 32px !important;
+    margin-left: 230px !important; /* cria espaço para as setas em overlay */
+  }
+
+  .testimonial-meta{
+  margin-bottom: 22px !important;  /* espaço entre meta e texto */
+}
+
+.testimonial-quote p{
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+}
+
+
+ /* =========================
+          MORE PROJECTS
+   ========================= */
+
+.home-more-projects,
+  .home-more-projects-inner{
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    transform: none !important;
+  }
+
+  /* centra SEM depender do layout do resto do site */
+  .more-projects-link{
+    position: relative !important;
+    left: 85% !important;
+    transform: translateX(-50%) !important;
+
+    display: inline-flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .home-more-projects{
+    padding: 70px var(--pad) !important;
+    /* extra para iPhones com safe-area */
+    padding-left: calc(var(--pad) + env(safe-area-inset-left)) !important;
+    padding-right: calc(var(--pad) + env(safe-area-inset-right)) !important;
+  }
+
+  .more-plus{
+    margin-top: 10px !important;
+    opacity: .7 !important;
+  }
+ 
+  
+
+  
+  /* =========================
+          LATEST PROJECTS 
+   ========================= */
+
+
+/* secção */
+.home-projects{
+  padding: 56px var(--pad) !important;
+}
+
+/* viewport do slider: mobile = 1 slide, sem peek */
+.home-projects .slider-viewport{
+  width: 100% !important;
+  margin: 18px 0 0 0 !important;
+
+  position: relative !important;
+
+  --peek: 0px !important;   /* 🔑 mata o “espreitar” */
+  --gap: 12px !important;   /* gap pequeno */
+
+  aspect-ratio: auto !important;
+  height: clamp(220px, 56vw, 320px) !important;  /* altura boa p/ mobile */
+  overflow: hidden !important;
+  border-radius: 14px;
+}
+
+/* slides = 1 por ecrã */
+.home-projects .slides{
+  gap: var(--gap) !important;
+}
+
+.home-projects .slide{
+  flex: 0 0 100% !important;  /* 🔑 ocupa tudo */
+  opacity: 1 !important;      /* sem fades estranhos no mobile */
+}
+
+/* imagem: no mobile, usa cover (fica “bonito” e cheio) */
+.home-projects .slide img{
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+/* meta (texto + setas) — tira o translateY e o padding gigante */
+.home-projects-meta{
+  position: relative !important;
+  padding-bottom: 56px !important;
+}
+
+.home-projects-caption{
+  margin: 0 !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  margin-top: 15px !important;
+}
+
+/* setas: sem padding-right gigante e alinhadas à esquerda (ou direita se preferires) */
+.home-projects-arrows{
+    position: absolute !important;
+    right: 6px !important;
+    bottom: 6px !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+    transform: none !important;
+
+    display: flex !important;
+    gap: 10px !important;
+    z-index: 3 !important;
+  }
+
+  /* botões com boa “press area” */
+  .case-nav{
+    width: 35px !important;
+    height: 35px !important;
+    font-size: 22px !important;
+  }
+}
+
+
+
+
+
+

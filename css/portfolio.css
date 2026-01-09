@@ -1,0 +1,341 @@
+:root{
+  /* só adiciono a cor de fundo desta página; não mexo no --rail do cabeçalho */
+  --page-bg-portfolio: #ffffff;
+}
+
+html{
+  overflow-x: hidden;
+}
+
+/* Fundo e tipografia geral da página PORTFOLIO */
+body.page-portfolio{
+  background: linear-gradient(
+    #262626 0 170px,
+    var(--page-bg-portfolio) 150px 100%
+  );
+  color: #444444;
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI",
+    Roboto, sans-serif;
+}
+
+/* barra esquerda branca, como ABOUT / SERVICES / CONTACTS */
+body.page-portfolio .left-rail{
+  bottom: auto;
+  height: auto;
+  justify-content: flex-start;
+  padding-left: 55px;
+  padding-right: 0;
+}
+
+/* MAIN */
+.portfolio-page{
+  padding-top: 300px;
+  padding-bottom: 150px;
+}
+
+/* TÍTULO "Case studies" */
+.portfolio-hero{
+  padding-left: var(--rail);
+  padding-right: 120px;
+  margin-bottom: 140px;
+}
+
+
+.portfolio-title{
+  margin: 0;
+  font-size: 80px;
+  line-height: 1.05;
+  font-weight: 700;
+  color: #3f3f3f;
+}
+
+/* GRID dos case studies – aqui só 1 item, mas já fica preparado */
+.portfolio-grid{
+  padding-left: var(--rail);
+  padding-right: 260px;
+  margin-bottom: 20px;
+}
+
+.portfolio-item{
+  max-width: 800px;   /* largura parecida à do site original */
+}
+
+/* imagem do case study */
+.portfolio-image{
+  width: 100%;
+  overflow: hidden;
+  border-radius: 4px;
+  position: relative;
+}
+
+.portfolio-link{
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+
+.portfolio-image img{
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform .5s ease;
+}
+
+.portfolio-image::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.25);  /* escurece */
+  opacity: 0;
+  transition: opacity .5s ease;
+}
+
+.portfolio-link:hover .portfolio-image img{
+  transform: scale(1.1);
+}
+
+
+/* legenda por baixo da imagem */
+.portfolio-caption{
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #222222;
+}
+
+
+/* ============================================
+   TESTIMONIALS – MESMO ESTILO DA HOME
+   ============================================ */
+
+.home-testimonials{
+  background: #ffffff;                   /* fundo quase branco */
+  color: #222222;
+  padding-top: 200px;
+  padding-bottom: 50px;
+  padding-right: 150px;
+  padding-left: calc(var(--rail) + 50px); /* respeita a barra esquerda */
+  margin-top: -15px;
+}
+
+.home-testimonials-inner{
+  max-width: 1180px;
+  margin: 0 auto;
+  text-align: left;
+  position: relative;
+}
+
+/* título grande */
+.home-testimonials-title{
+  margin: 0 0 60px;
+  font-size: 80px;
+  line-height: 80px;
+  font-weight: 700;
+  font-family: -apple-system, BlinkMacSystemFont, Rubik, Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+/* linha horizontal */
+.testimonials-separator{
+  border: 0;
+  border-top: 3px solid #828181;
+  margin: 0 0 24px;
+  width: 79%;
+}
+
+/* duas colunas: nome/role + quote */
+.home-testimonials-body{
+  display: grid;
+  column-gap: 125px;
+  grid-template-columns: 260px minmax(0, 550px);
+  align-items: flex-start;
+  font-weight: 400;
+  line-height: 40px;
+  font-size: 18px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, BlinkMacSystemFont, Rubik, Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.home-testimonials-slider{
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 0;
+  cursor:default;
+
+  scrollbar-width: none;       
+}
+
+.home-testimonials-slider::-webkit-scrollbar{
+  display: none;                
+}
+
+.home-testimonials-slider.is-dragging{
+  cursor: grabbing;
+}
+
+.home-testimonials-slider .testimonial-slide{
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+}
+
+.home-testimonials-nav{
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  transform: translateX(300px);
+}
+
+.home-testimonials-arrow{
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+
+  border: 1px solid rgba(0,0,0,0.25);
+  background: #ffffff;
+  color: #333333;
+
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow:
+    0 4px 10px rgba(0,0,0,0.10);
+
+  transition:
+    background .18s ease,
+    border-color .18s ease,
+    color .18s ease,
+    transform .08s ease,
+    box-shadow .18s ease;
+}
+
+.home-testimonials-arrow:hover{
+  background: #e42323;
+  border-color: #e42323;
+  color: #ffffff;
+  box-shadow:
+    0 8px 18px rgba(0,0,0,0.25);
+}
+
+.home-testimonials-arrow:active{
+  transform: scale(0.94) translateY(1px);
+  box-shadow:
+    0 3px 8px rgba(0,0,0,0.25);
+}
+
+
+
+
+/* coluna da esquerda */
+.testimonial-meta .testimonial-name{
+  margin: 0 0 12px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.testimonial-meta .testimonial-role{
+  margin: 0;
+  font-size: 18px;
+  color: #777;
+  letter-spacing: .01em;
+  white-space: nowrap; 
+  font-weight: 400;
+}
+
+/* coluna da direita */
+.testimonial-quote p{
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.9;
+  color: #444;
+}
+
+.home-kicker{
+  margin: 0 0 18px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: .10em;
+  text-transform: uppercase;
+  line-height: 32px;
+  color: #9b9b9b;   
+  font-family: -apple-system, BlinkMacSystemFont, Rubik, Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+/* ============================
+   PORTFOLIO – AJUSTE PARA PORTÁTIL
+   ============================ */
+@media (min-width: 1200px) and (max-width: 1919px) {
+
+  /* título "Portfolio" mais à esquerda */
+  .portfolio-hero{
+    padding-left: calc(var(--rail) - 100px); /* puxa para a esquerda */
+    padding-right: 80px;                    /* menos espaço à direita */
+  }
+
+  /* imagem e legenda mais à esquerda */
+  .portfolio-grid{
+    padding-left: calc(var(--rail) - 100px); 
+    padding-right: 100px;
+  }
+
+  /* opcional: diminuir ainda mais o recuo do --rail */
+  body.page-portfolio .left-rail{
+    padding-left: 60px; 
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1919px) {
+
+  .home-testimonials{
+    padding-right: 100px;     
+    padding-bottom: 30px !important;   
+    padding-left: 300px !important; 
+    padding-top: 170px !important;        
+  }
+
+  .home-testimonials-title{
+    font-size: 65px;                      
+    line-height: 70px;
+    margin-bottom: 40px;
+    max-width: 650px;
+  }
+
+  .home-testimonials-body{
+    grid-template-columns: 220px minmax(0, 430px); /* colunas um pouco mais estreitas */
+    column-gap: 15px;                              /* menos espaço entre colunas */
+    font-size: 16px;                               /* texto ligeiramente menor */
+    line-height: 32px;                             /* menos “altura” por linha */
+  }
+
+ .home-testimonials-body > div:last-child p {
+    font-size: 17px !important;
+    line-height: 26px !important;
+}
+
+   .testimonial-meta .testimonial-role {
+    white-space: normal !important;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .home-testimonials-nav {
+    justify-content: flex-start !important; /* alinha à esquerda */
+    margin-left: 300px !important;          /* alinha com o texto da direita */
+    margin-top: 30px;                       /* ajusta verticalmente */
+}
+}
+
+

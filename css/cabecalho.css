@@ -1,0 +1,535 @@
+:root{
+  --rail: 400px;            
+  --left-bg: #262626;       
+  --hero-bg: #7e7e7e;       
+  --text: #ffffff;
+  --muted: #e0e0e0;
+  --nav-top: 65px;          
+  --underline-h: 2px;       
+  --underline-gap: 1px;     
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+
+body{
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: var(--hero-bg);  
+  overflow-x: hidden;
+}
+
+.left-rail{
+  position: absolute;
+  top: 0; bottom: 0; left: 0;
+  height: 100vh;
+  width: var(--rail);
+  background: var(--left-bg);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 32px;
+  z-index: 100;
+  padding-right: 68px;
+}
+
+body.page-index .left-rail .brand {
+  padding-left: 53px;   
+}
+
+.left-rail .brand img{
+  display:block;
+  height: 107px;
+  width: auto;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.top-nav{
+  position: absolute;
+  top: var(--nav-top);
+  left: calc(var(--rail) + 18px);
+  right: 78px;
+  z-index: 120;
+}
+
+.top-nav > ul{
+  display:flex;
+  justify-content:flex-end;
+  gap: 35px;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+/* NAV – só links do menu principal (HOME, SERVICES, etc.) */
+.top-nav > ul > li > a{
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  font-weight: 900;
+  font-size: 14.7px;
+  padding-bottom: 0;
+
+  opacity: 1;
+  text-shadow: 0 1px 0 rgba(0,0,0,.25);
+  border-bottom: none;
+  transition: none;
+}
+
+/* underline única */
+.top-nav > ul > li > a::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: #ffffff;
+  transform-origin: left center;
+  transform: scaleX(1);
+}
+
+@keyframes nav-underline-sweep{
+  0%   { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+
+/* hover: anima só a linha */
+.top-nav > ul > li > a:hover::after{
+  animation: nav-underline-sweep 0.40s ease-out forwards;
+}
+
+/* HOME ativa */
+.top-nav > ul > li > a.active::after{
+  transform: scaleX(1);
+}
+
+.top-nav > ul > li > a.active:hover::after{
+  animation: none;
+}
+
+/* ===== OUTRAS PÁGINAS ===== */
+
+body:not(.page-index) .top-nav > ul > li > a{
+  color: #ffffff;
+  text-shadow: none;
+}
+
+body:not(.page-index) .top-nav > ul > li > a::after{
+  background: #ffffff;
+}
+
+body:not(.page-index) .top-nav > ul > li > a.active{
+  color: #e42323;
+}
+
+body:not(.page-index) .top-nav > ul > li > a.active::after{
+  background: #e42323;
+}
+
+body:not(.page-index) .top-nav > ul > li > a.active:hover::after{
+  animation: none;
+  transform: scaleX(1);
+}
+
+.page{
+  padding-left: calc(var(--rail) + 24px);
+  padding-top: 80px;          
+  color: var(--text);
+}
+
+/* ========== LANGUAGE SWITCHER (BOTÃO) ========== */
+
+/* item do menu onde está o seletor de idioma */
+.top-nav .lang-item{
+  display: flex;
+  align-items: center;
+  margin-top: -6px;
+}
+
+/* wrapper do seletor de idioma */
+.lang-switcher{
+  position: relative;
+  margin: 0;
+  font-size: 12px;
+}
+
+/* BOTÃO PRINCIPAL (pill glassy) */
+.lang-current{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: 1px solid rgba(255, 255, 255,0.55);
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #ffffff;
+  cursor: pointer;
+  font: inherit;
+  transition: background .18s ease, border-color .18s ease, transform .12s ease;
+}
+
+.lang-current:hover{
+  background: rgba(255,255,255,0.12);
+  border-color: #e42323;
+  box-shadow: 0 0 6px rgba(228,35,35,0.4);
+}
+
+.lang-current:active{
+  transform: scale(0.97);
+}
+
+.lang-current .lang-flag{
+  width: 22px;
+  height: 15px;
+  object-fit: cover;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.3);
+}
+
+.lang-code{
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-size: 12px;
+  opacity: 1;
+  font-weight: 600;
+}
+
+/* icon da seta (chevron) */
+.lang-arrow{
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  transform: rotate(-135deg);
+  transition: transform .18s ease, border-color .18s ease;
+  opacity: .7;
+  margin-top: -1px;
+}
+
+/* aberto: seta vira para cima */
+.lang-switcher.is-open .lang-arrow{
+  transform: rotate(45deg);
+  border-color: #ffffff;
+  opacity: 1;
+}
+
+/* ESTADO ATIVO: dropdown aberto */
+.lang-switcher.is-open .lang-current{
+  border-color: #d81f1f;
+  box-shadow: 0 0 6px rgba(228,35,35,0.45);
+}
+
+.lang-switcher.is-open .lang-current .lang-code{
+  color: #ffffff;
+}
+
+/* ========== DROPDOWN COMPLETO (container) ========== */
+
+.lang-dropdown{
+  position: absolute;
+  right: 0;
+  top: 130%;
+  margin: 0;
+  padding: 4px 0 6px;
+  background: rgba(10,10,10,0.96);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.55);
+  min-width: 200px;
+  display: none;              /* começa escondido */
+  z-index: 999;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* dropdown escondido por defeito */
+.top-nav .lang-item .lang-dropdown{
+  display: none;
+}
+
+/* aparece quando lang-switcher tem .is-open */
+.top-nav .lang-item .lang-switcher.is-open .lang-dropdown{
+  display: block;
+}
+
+/* ========= PESQUISA ========= */
+
+.lang-search-input {
+  width: calc(100% - 24px);
+  margin: 6px 12px 4px;
+  padding: 8px 12px 8px 32px;   /* espaço extra para o ícone à esquerda */
+  border: 1px solid rgba(255,255,255,0.16);
+  background:
+    url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='11' cy='11' r='6' stroke='%23BBBBBB' stroke-width='2'/%3E%3Cline x1='15.5' y1='15.5' x2='20' y2='20' stroke='%23BBBBBB' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E")
+      12px center no-repeat,
+    rgba(0,0,0,0.7);            /* fundo glassy */
+  background-size: 14px 14px;
+  color: #f5f5f5;
+  font-size: 12px;
+  outline: none;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.03),
+    0 0 0 0 rgba(228,35,35,0);  /* sem glow por defeito */
+  transition:
+    border-color .18s ease,
+    box-shadow .18s ease,
+    background .18s ease;
+}
+
+.lang-search-input::placeholder {
+  color: #a0a0a0;
+  letter-spacing: .03em;
+}
+
+.lang-search-input:focus {
+  border-color: #e42323;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.05),
+    0 0 0 1px rgba(228,35,35,0.5);
+  background:
+    url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='11' cy='11' r='6' stroke='%23FFFFFF' stroke-width='2'/%3E%3Cline x1='15.5' y1='15.5' x2='20' y2='20' stroke='%23FFFFFF' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E")
+      12px center no-repeat,
+    rgba(0,0,0,0.75);
+  background-size: 14px 14px;
+}
+
+/* ========= LISTA ========= */
+
+.lang-menu{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* lista de línguas com scroll (mostra ~ até ITALIANO) */
+.lang-list {
+  max-height: 140px;          /* afina para ficar até ITALIANO */
+  overflow-y: auto;
+  padding: 6px 0;
+}
+
+/* scroll bar discreta (Chrome/Edge) */
+.lang-list::-webkit-scrollbar {
+  width: 6px;
+}
+.lang-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+.lang-list::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.22);
+}
+
+/* cada item do dropdown */
+.lang-menu li{
+  position: relative;
+  font-weight: 900; /* força bold no item inteiro */
+}
+
+/* linha só no hover – por defeito NÃO se vê nada */
+.lang-menu li::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: transparent;
+  transition: background .15s ease;
+}
+
+/* ao passar por cima, aparece a linha vermelha a ocupar a largura toda */
+.lang-menu li:hover::after{
+  background: #e42323;
+}
+
+/* links dentro do dropdown */
+.lang-menu li a{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  color: #f5f5f5;
+  text-decoration: none;
+  font-size: 12px !important;
+  white-space: nowrap;
+  font-weight: inherit !important; /* usa o 900 do li */
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-family: inherit !important;
+  text-shadow: 0 0 0.7px #000; /* engrossa visualmente o bold */
+}
+
+.lang-menu li a .lang-flag{
+  width: 18px;
+  height: 12px;
+  object-fit: cover;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.3);
+}
+
+.lang-menu li a span{
+  letter-spacing: .05em;
+}
+
+/* hover: fundo mais escuro, texto mantém branco */
+.lang-menu li:hover{
+  background: #2a2a2a;
+}
+
+.lang-menu li:hover a{
+  color: #ffffff;
+}
+
+/* ===============================
+   LOGIN BUTTON (SIMPLES)
+   =============================== */
+
+/* LOGIN = mesmo look do botão de idioma (.lang-current) */
+.top-nav .login-item{
+  display: flex;
+  align-items: center;
+  margin-top: -6px;         /* igual ao lang-item */
+}
+
+.top-nav .login-btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 20px;   
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  color: #ffffff;
+  cursor: pointer;
+  font: inherit;            /* para herdar o mesmo font-size do wrapper */
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-size: 12px;
+  font-weight: 600;
+
+  transition: background .18s ease, border-color .18s ease, transform .12s ease;
+}
+
+.top-nav .login-btn:hover{
+  color: #ffffff;
+  background: #e42323;
+  border-color: #e42323;
+  box-shadow: 0 0 6px rgba(228,35,35,0.4);
+}
+
+.top-nav .login-btn:active{
+  transform: scale(0.97);
+}
+
+.top-nav > ul > li.login-item > a::after{
+  content: none !important;
+  display: none !important;
+}
+
+/* FORÇAR MESMA ALTURA DO BOTÃO DE IDIOMA */
+.top-nav .login-btn,
+.top-nav .lang-current{
+  height: 40px;
+  line-height: 1;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+/* aproximar LOGIN do IDIOMA */
+.top-nav > ul > li.lang-item{
+  margin-left: -15px;  /* ajusta: -8 / -12 / -18 */
+}
+
+.top-nav > ul > li.login-item,
+.top-nav > ul > li.lang-item{
+  transform: translateX(25px); /* ajusta: 10 / 15 / 25 */
+}
+
+.top-nav > ul > li:not(.login-item):not(.lang-item){
+  transform: translateX(20px); /* ajusta: 10 / 15 / 25 */
+}
+
+
+.mobile-menu-btn{
+  display: none;
+}
+
+.mobile-topbar{
+  display: none;
+}
+
+/* =========================
+   BOTÃO VOLTAR AO TOPO — ESTILO SITE
+   ========================= */
+
+.btn-topo-header{
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+
+  width: 45px;
+  height: 45px;
+
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 5px;
+
+  background: rgba(38,38,38,0.95); /* igual ao header */
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  z-index: 9999;
+
+  /* escondido por defeito */
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+
+  transition:
+    opacity .25s ease,
+    transform .25s ease,
+    border-color .2s ease,
+    background .2s ease;
+}
+
+.btn-topo-header i{
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* quando aparece */
+.btn-topo-header.show{
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* hover — vermelho como o site */
+.btn-topo-header:hover{
+  border-color: #dfd9d9;
+  background: #262626;
+}
+
+
+@media (min-width: 1200px) and (max-width: 1919px) {
+
+  body.page-index .left-rail .brand {
+    padding-left: 60px;   
+  }
+
+  @media (min-width: 1200px) and (max-width: 1919px) {
+  .top-nav > ul > li > a{
+     white-space: nowrap;
+
+  }
+}
+}
+
+

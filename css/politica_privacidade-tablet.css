@@ -1,0 +1,88 @@
+@media (min-width: 768px) and (max-width: 1199px) {
+
+.mobile-topbar{
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+  height: 10px !important;  
+  box-shadow: none !important;
+}
+
+
+.mobile-logo img{ height: 120px; width: auto; }
+
+.mobile-menu-btn{
+    left: 14px;
+    top: 100px;
+    width: 80px;
+    height: 80px;
+  }
+
+    .mobile-login{
+    left: 18px;
+    top: 14px;
+    padding: 16px 22px;
+    font-size: 15px;
+  }
+
+  .mobile-topbar .lang-current{
+    padding: 16px 24px !important;
+    font-size: 15px !important;
+    height: 50px !important;
+  }
+
+    .mobile-topbar .lang-flag{
+    width: 21px !important;
+    height: 21px !important;
+  }
+
+    .lang-code{
+    font-size: 16px;
+  }
+
+
+  body.page-politica_privacidade .left-rail{
+    display: none !important;
+  }
+
+  /* wrapper */
+  body.page-politica_privacidade .privacy-page{
+    padding-top: 120px !important;
+    padding-bottom: 100px !important;
+  }
+
+  /* título */
+  body.page-politica_privacidade .privacy-hero{
+    padding-left: var(--pad) !important;
+    padding-right: var(--pad) !important;
+  }
+
+  body.page-politica_privacidade .privacy-title{
+    margin: 10px 0 36px !important;
+    font-size: 56px !important;
+    line-height: 1.06 !important;
+  }
+
+  /* conteúdo */
+  body.page-politica_privacidade .privacy-content{
+    padding-left: var(--pad) !important;
+    padding-right: var(--pad) !important;
+  }
+
+  body.page-politica_privacidade .privacy-inner{
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  body.page-politica_privacidade .privacy-inner h2{
+    margin: 36px 0 12px !important;
+    font-size: 28px !important;
+    line-height: 1.25 !important;
+  }
+
+  body.page-politica_privacidade .privacy-inner p{
+    margin: 0 0 16px !important;
+    font-size: 15px !important;
+    line-height: 1.85 !important;
+    font-weight: 300 !important;
+  }
+}

@@ -1,0 +1,220 @@
+:root{
+  --page-bg-model-detail: #ffffff;
+}
+
+html{
+  overflow-x: hidden;
+}
+
+/* FUNDO + TIPOGRAFIA GERAL (cabeçalho cinzento) */
+body.page-model_detail{
+  background: linear-gradient(
+    #262626 0 170px,
+    var(--page-bg-model-detail) 150px 100%
+  );
+  color: #444444;
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI",
+               Roboto, sans-serif;
+}
+
+/* barra esquerda branca, como services/about/etc */
+body.page-model_detail .left-rail{
+  bottom: auto;
+  height: auto;
+  justify-content: flex-start;
+  padding-left: 55px;
+  padding-right: 0;
+}
+
+/* wrapper principal */
+.model-detail-page{
+  padding-top: 300px;
+  padding-bottom: 0;
+}
+
+/* ===== TÍTULO ===== */
+
+.model-detail-hero{
+  padding-left: var(--rail);
+  padding-right: 150px;
+}
+
+.model-detail-title{
+  margin: 0 0 90px;
+  max-width: 1150px;
+  font-size: 72px;
+  line-height: 1.05;
+  font-weight: 700;
+  color: #3f3f3f;
+}
+
+/* ===== IMAGEM GRANDE ===== */
+
+.model-detail-main-image{
+  padding-left: var(--rail);
+  padding-right: 150px;
+  margin-bottom: 140px;
+}
+
+.model-detail-main-image-inner{
+  max-width: 1200px;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.model-detail-main-image-inner img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ===== TEXTO EXPLICATIVO ===== */
+
+.model-detail-description{
+  padding-left: calc(var(--rail) + 60px);
+  padding-right: 150px;
+  margin-bottom: 180px;
+  margin-top: -20px;
+}
+
+.model-detail-description-inner{
+  max-width: 880px;
+  margin: 0;
+  text-align: center;
+}
+
+.model-detail-description-inner p{
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.9;
+  color: #666666;
+  font-weight: 300;
+}
+
+/* ===== BLOCO "NEXT PROJECT" ===== */
+
+.model-detail-next{
+  background: #f1f1f1;
+  padding: 150px 0 220px;
+}
+
+.model-detail-next-inner{
+  padding-right: 150px;
+  padding-left: 170px; 
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+  column-gap: 120px;
+  align-items: center;
+}
+
+/* texto do lado esquerdo */
+.model-detail-next-kicker{
+  margin: 0 0 30px;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: .03em;
+  color: #666666;
+}
+
+.model-detail-next-title{
+  margin: 0;
+  font-size: 62px;
+  line-height: 1.1;
+  font-weight: 700;
+  color: #333333;
+}
+
+/* imagem do lado direito */
+.model-detail-next-image{
+  display: block;
+  margin-top: 30px;
+}
+
+.model-detail-next-image img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* efeito de “transparência”/hover na imagem do Next project */
+.model-detail-next-image{
+  position: relative;
+  overflow: hidden;          /* se houver pequeno zoom, não passa para fora */
+}
+
+.model-detail-next-image img{
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: opacity .35s ease, transform .35s ease;
+  cursor: pointer;           /* opcional, dá sensação de clique */
+}
+
+/* ao passar por cima: ligeiro fade + zoom suave */
+.model-detail-next-image:hover img{
+  opacity: 0.65;             /* transparência (ajusta entre 0.6–0.8) */
+  transform: scale(1.03);    /* pequeno zoom, podes tirar se não quiseres */
+}
+
+
+/* PORTÁTIL — mover IMAGEM e TEXTO mais para a esquerda */
+@media (min-width: 1200px) and (max-width: 1919px) {
+
+  /* TÍTULO mais para a esquerda */
+  .model-detail-title {
+    margin-left: -170px;       
+    max-width: 1100px;  
+    font-size: 60px;        
+  }
+
+  /* IMAGEM mais para a esquerda */
+  .model-detail-main-image {
+    margin-left: -170px;        /* mesma distância que o título → ficam alinhados */
+    max-width: 1600px;          /* opcional, melhora em portátil */
+  }
+
+  /* TEXTO que vem depois da imagem */
+  .model-detail-description {
+    padding-left: calc(var(--rail) - 30px); 
+    padding-right: 200px;
+  }
+}
+
+/* NEXT PROJECT – ajuste portátil */
+@media (min-width: 1200px) and (max-width: 1919px) {
+
+  /* grid mais para a esquerda e com coluna de texto mais larga */
+  .model-detail-next-inner{
+    max-width: 1500px;                  
+    margin: 0 auto;                     
+    padding-left: 120px;
+    
+
+    display: grid;
+    grid-template-columns: 400px minmax(0, 900px); 
+    column-gap: 50px;                   
+              
+  }
+
+  /* título não leva mais nada – só para garantir que não fica estreito */
+  .model-detail-next-title{
+    max-width: 520px;    
+    font-size: 50px;                
+  }
+
+
+  .model-detail-next-image{
+    width: 600px !important;
+    flex-shrink: 0 !important;               
+  }
+
+  .model-detail-next-image img{
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+
+
+

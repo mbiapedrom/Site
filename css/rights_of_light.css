@@ -1,0 +1,194 @@
+:root{
+  --page-bg-rights: #ffffff;
+}
+
+html{
+  overflow-x: hidden;
+}
+
+/* FUNDO + TIPOGRAFIA GERAL */
+body.page-rights_of_light{
+  background: linear-gradient(
+    #262626 0 170px,
+    var(--page-bg-rights) 150px 100%);
+  color: #444444;
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI",
+               Roboto, sans-serif;
+}
+
+/* barra esquerda branca, igual a services/about/contact */
+body.page-rights_of_light .left-rail{
+  bottom: auto;
+  height: auto;
+  justify-content: flex-start;
+  padding-left: 55px;
+  padding-right: 0;
+}
+
+/* wrapper principal */
+.rights-page{
+  padding-top: 300px;
+  padding-bottom: 200px;
+}
+
+/* ===== TÍTULO + IMAGEM GRANDE ===== */
+
+.rights-hero{
+  padding-left: var(--rail);
+  padding-right: 150px;
+}
+
+.rights-title{
+  margin: 0 0 80px;
+  font-size: 80px;
+  line-height: 1.05;
+  font-weight: 700;
+  color: #4a4a4a;
+}
+
+/* imagem logo a seguir ao título */
+.rights-hero-image{
+  padding-left: var(--rail);
+  padding-right: 150px;
+  margin-bottom: 140px;
+}
+
+.rights-hero-image-inner{
+  max-width: 1060px;
+  margin-left: 0;   
+  margin-right: auto;
+}
+
+.rights-hero-image-inner img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ===== PARÁGRAFO INTRO (EM CIMA, À DIREITA) ===== */
+
+.rights-intro{
+  padding-bottom: 160px;
+}
+
+.rights-intro-inner{
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: 17px;
+  line-height: 1.9;
+  color: #666666;
+  font-weight: 300;
+}
+
+/* ===== BLOCO TEXTO + IMAGEM (BAIXO) ===== */
+
+.rights-detail{
+  padding-left: var(--rail);
+  padding-right: 260px;
+}
+
+.rights-detail-inner{
+  max-width: 1500px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  column-gap: 120px;
+  align-items: flex-start;
+}
+
+.rights-detail-text{
+  max-width: 500px;   /* experimenta 440–480 até ficar igual ao site */
+}
+
+
+/* texto à esquerda */
+.rights-detail-text h2{
+  margin: 0 0 30px;
+  font-size: 40px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #4a4a4a;
+}
+
+.rights-detail-text ul{
+  margin: 0;
+  padding-left: 20px;
+  font-size: 17px;
+  line-height: 1.9;
+  color: #555555;
+}
+
+.rights-detail-text li{
+  margin-bottom: 10px;
+}
+
+/* imagem à direita */
+.rights-detail-image{
+  max-width: 560px;
+  justify-self: start;
+  margin-top: 10px;  
+  margin-left: -130px; /* sobe um bocadinho para alinhar com o h2 */
+}
+
+.rights-detail-image img{
+  display: block;
+  width: 100%;
+  height: 520px;
+  object-fit: cover;     
+  object-position: center center;
+}
+
+@media (min-width: 1200px) and (max-width: 1919px) {
+
+  /* título + primeira imagem mais para a esquerda */
+  .rights-hero{
+    padding-left: 170px;   /* antes era 260px */
+    padding-right: 260px;
+  }
+
+  /* PRIMEIRA IMAGEM — o wrapper que a contém */
+  .rights-hero-image {
+    padding-left: 170px !important;   /* antes 260px */
+  }
+
+  /* garante que a imagem não está a ser empurrada por margin */
+  .rights-hero-image img {
+    margin-left: 0 !important;
+    display: block;
+  }
+
+  /* bloco de texto “A massing model…” alinhado com o resto */
+  .rights-intro{
+    padding-left: 170px;   /* antes era 260px */
+    padding-right: 260px;
+  }
+
+  .rights-intro-inner{
+    max-width: 900px;      /* opcional: deixa o texto mais compacto */
+  }
+
+  /* secção com o texto à esquerda e a imagem à direita */
+  .rights-detail{
+    padding-left: 100px;   /* antes era 260px */
+    padding-right: 220px;
+  }
+
+  .rights-detail-inner{
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+    column-gap: 20px;    /* se quiseres o texto um pouco mais perto da imagem */
+  }
+
+  .rights-detail-image {
+    margin-left: 40px;
+    padding-top: 75px;   /* antes 260px */
+  }
+
+  /* garante que a imagem não está a ser empurrada por margin */
+  .rights-detail-image img {
+    width: 130%;
+    height: 520px;       /* volta a ser alta como no print bom */
+    object-fit: cover;   /* enche a área */
+    object-position: center; /* centra a imagem para cortar o mínimo possível */
+    display: block;
+  }
+}

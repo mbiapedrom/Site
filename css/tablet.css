@@ -1,0 +1,434 @@
+ @media (min-width: 768px) and (max-width: 1199px) {
+
+     :root{
+    --rail: 0px;
+    --pad: 24px;
+  }
+
+    html, body{
+    overflow-x: hidden;
+  }
+
+  /* desligar rail no tablet */
+  .left-rail{ display:none !important; }
+
+  /* padding geral */
+  .page, main, .container{
+    padding-left: var(--pad) !important;
+    padding-right: var(--pad) !important;
+  }
+
+  /* mostrar topbar (já existe no HTML) */
+  .mobile-topbar{
+    display: block !important;
+    position: static;
+    top: 0; left: 0; right: 0;
+    z-index: 9999;
+
+    height: 170px;
+    background: #262626;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  }
+
+  body{ padding-top: 110px; }
+
+  /* botão menu */
+  .mobile-menu-btn{
+    display: inline-flex !important;
+    position: absolute;
+    left: 14px;
+    top: 100px;
+    width: 80px;
+    height: 80px;
+    border: 0;
+    background: transparent;
+    color: #fff;
+    font-size: 40px;
+    z-index: 10004;
+  }
+
+  /* logo centrado */
+  .mobile-logo{
+    position: absolute;
+    left: 50%;
+    top: 18px;
+    transform: translateX(-50%);
+  }
+  .mobile-logo img{ height: 120px; width: auto; }
+
+  /* ações topo */
+  .mobile-login{
+    position: absolute;
+    left: 18px;
+    top: 14px;
+    padding: 14px 24px;
+    font-size: 15px;
+    font-weight: 800;
+    color: #fff;
+    text-decoration: none;
+    background: rgba(0,0,0,0.14);
+    border: 1px solid rgba(255,255,255,0.22);
+    z-index: 10004;
+  }
+
+  .mobile-topbar .lang-current{
+    padding: 16px 24px !important;
+    font-size: 15px !important;
+    height: 50px !important;
+  }
+
+  .mobile-topbar .lang-flag{
+    width: 21px !important;
+    height: 21px !important;
+  }
+
+    .lang-code{
+    font-size: 16px;
+  }
+
+  .mobile-topbar .lang-switcher.is-open .lang-dropdown{
+    display: block !important;
+  }
+
+  /* Dropdown um pouco mais largo (opcional) */
+  .mobile-topbar .lang-dropdown{
+    width: 260px !important;
+    max-height: 60vh !important;
+    padding: 6px 0 !important;
+  }
+  
+
+  .mobile-topbar .lang-switcher{
+    position: absolute;
+    right: 18px;
+    top: 14px;
+    z-index: 10004;
+  }
+
+  .lang-list {
+  max-height: 230px !important;
+  padding: 6px 0 !important;
+}
+
+.mobile-topbar .lang-dropdown a{
+  display: flex;
+  align-items: center !important;
+  gap: 10px !important;
+
+  padding: 10px 14px !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+.mobile-topbar .lang-dropdown a{
+  width: fit-content !important;     /* <- chave */
+  max-width: 100%;
+
+  padding: 10px 8px !important;     /* menos espaço lateral */
+  margin-left: 12px !important;      /* afasta da borda esquerda */
+  margin-right: 0 !important;
+
+  gap: 10px !important;              /* bandeira + texto juntos */
+}
+
+/* texto */
+.mobile-topbar .lang-dropdown .lang-code,
+.mobile-topbar .lang-dropdown .lang-name{
+  font-size: 17px !important;
+  white-space: nowrap;               /* não quebra */
+}
+
+/* bandeiras */
+.mobile-topbar .lang-dropdown .lang-flag{
+  width: 24px !important;
+  height: 24px !important;
+  flex-shrink: 0;
+}
+
+
+.lang-search-input{
+  font-size: 17px !important;          /* antes 12px */
+  padding: 12px 14px 12px 38px !important; /* mais alto + mantém espaço do ícone */
+  margin: 10px 14px 8px !important;    /* mais respiro */
+  background-size: 16px 16px !important; /* ícone maior */
+}
+
+
+  /* esconder nav desktop horizontal e transformar em dropdown (hamburger) */
+  .top-nav{ position: static; left:auto; right:auto; top:auto; }
+
+  .top-nav > ul{
+  display: block !important;
+  position: fixed !important;
+  left: 48% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 10002 !important;
+
+  /* remover “card/caixa” */
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+
+  /* layout */
+  width: auto !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  list-style: none !important;
+
+  /* estado fechado (assumindo que usas opacity/pointer-events) */
+  opacity: 0 !important;
+  pointer-events: none !important;
+  
+  }
+
+  body.menu-open .top-nav > ul{
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+body.menu-open::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 10001;
+}
+
+
+.top-nav > ul > li{
+ margin: 0 0 18px 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  text-align: center !important;
+  transform: none !important;
+}
+
+.top-nav > ul > li:last-child{
+  border-bottom: none;
+}
+
+  /* esconder duplicados dentro do menu */
+  .top-nav > ul > li.login-item,
+  .top-nav > ul > li.lang-item{
+    display:none !important;
+  }
+
+  /* links — tipografia forte, super clean */
+  .top-nav > ul > li > a{
+  display: inline-block !important;
+  padding: 0 !important;
+
+  color: #fff !important;
+  text-decoration: none !important;
+
+  font-size: 25px !important;
+  font-weight: 800 !important;
+  letter-spacing: .18em !important;
+  text-transform: uppercase !important;
+
+   border-bottom: 0 !important;
+  background-image: none !important;
+
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+
+  width: fit-content !important;
+  margin: 0 auto !important;
+}
+
+/* active: barra vermelha à esquerda (mais premium que underline) */
+.top-nav > ul > li > a.active{
+  position: relative !important;
+   color: #e42323 !important;
+  font-weight: 900 !important;
+}
+
+.top-nav > ul > li > a.active::after{
+  content:"" !important;
+  position: absolute !important;
+   left: 0 !important;
+  right: 0 !important;
+  bottom: -2px !important;
+  height: 4px !important;
+  background: #e42323 !important;
+  border-radius: 2px !important;
+}
+
+.top-nav > ul > li > a.active{
+  position: relative !important;
+}
+
+.top-nav > ul > li > a:hover{
+  background: transparent !important;
+  transform: none !important;
+  text-decoration: none !important;
+}
+
+.top-nav > ul > li > a::before,
+.top-nav > ul > li > a::after{
+  content: none !important;
+}
+
+  /* garante que topbar fica clicável acima do overlay */
+.top-nav > ul > li.login-item,
+.top-nav > ul > li.lang-item{
+  display:none !important;
+  }
+
+ body.page-index .hero-slider{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 100vw !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+  }
+
+  /* opcional: altura mais “mobile-like” */
+  body.page-index .slider-viewport{
+    height: calc(100vh - 160px) !important;
+  }
+
+  /* AQUI É O FIX: em vez de top:27%, usar bottom */
+  body.page-index .caption{
+    left: var(--pad) !important;
+    right: var(--pad) !important;
+    top: auto !important;
+    bottom: 250px !important;  /* ajusta: 90–140 conforme queres */
+  }
+
+  body.page-index .caption h1{
+    font-size: 78px !important;
+    line-height: 1.05 !important;
+    margin-bottom: 10px !important;
+  }
+
+  body.page-index .caption p{
+    font-size: 30px !important;
+    line-height: 1.2 !important;
+  }
+
+  /* seta um pouco mais “colada” como no mobile */
+  body.page-index .caption .arrow{
+    margin-top: 28px !important;
+  }
+
+
+   .site-footer{
+    padding-left: var(--pad) !important;
+    padding-right: var(--pad) !important;
+  }
+
+  .footer-inner{
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+    .footer-col-left .footer-address{
+    padding-left: 20px !important; 
+  }
+
+  .footer-col-left .footer-kicker{
+  padding-left: 20px !important; 
+  }
+
+  .footer-col-left .footer-title{
+    padding-left: 20px !important; 
+  }
+
+  
+  /* bloco de baixo (onde estão logos + legal + social) */
+  .footer-bottom{
+    margin-top: 70px !important;
+    padding-top: 26px !important;
+
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+
+    flex-wrap: wrap !important;
+    gap: 22px !important;
+  }
+  
+
+  /* tira os “empurrões” desktop */
+  .footer-bottom-left{
+    margin-left: 0 !important;
+    padding-top: 0 !important;
+
+    flex: 1 1 420px !important;   /* ocupa esquerda */
+  }
+
+  .footer-bottom-right{
+    margin-right: 0 !important;
+    margin-top: 0 !important;
+
+    flex: 0 0 auto !important;    /* direita com logo */
+    align-items: flex-start !important;
+    justify-content: flex-end !important;
+  }
+
+  /* logos um pouco mais pequenos no tablet */
+  .footer-mini-logo{
+    height: 66px !important;
+  }
+
+  .footer-design{
+    height: 58px !important;
+    width: auto !important;
+    margin-left: 0 !important;
+    transform: translate(-120px, -20px) !important; 
+  }
+
+  /* legal / privacy: mantém alinhado à esquerda */
+  .footer-legal{
+    flex-wrap: wrap !important;
+    gap: 7px !important;
+  }
+
+  /* ícones sociais: em baixo e centrados (como no teu 3º print) */
+  .footer-social{
+    width: 100% !important;
+    margin: 16px 0 0 0 !important;
+
+    display: flex !important;
+    justify-content: center !important;
+    gap: 16px !important;
+    padding-left: 480px !important;
+   
+  }
+
+  .footer-social-link{
+    font-size: 22px !important;
+  }
+
+  .btn-topo-header{
+
+
+  width: 55px;
+  height: 55px;
+  }
+
+  .btn-topo-header:hover{
+    border-color: rgba(255,255,255,0.25);
+    background: rgba(38,38,38,0.95);
+  }
+
+  .btn-topo-header{
+  border-radius: 10px;  /* em vez de 5px */
+}
+
+.btn-topo-header i{
+  font-size: 19px;
+}
+ 
+}
+  
+ 

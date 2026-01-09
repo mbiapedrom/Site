@@ -1,0 +1,432 @@
+/* 4k.css — ajustes globais para ecrãs grandes */
+@media (min-width: 2560px){
+
+    /* MENU - HERO - CABEÇALHO */
+    :root{
+    --scale-4k: 1.25; 
+  }
+
+    .left-rail{
+    width: calc(180px * var(--scale-4k));
+  }
+
+    .left-rail .brand img{
+    width: calc(470px * var(--scale-4k));
+    height: auto;
+    padding-left: 270px;
+  }
+
+   .caption h1{
+    font-size: 150px !important;
+    line-height: 1.05 !important;
+  }
+
+    .caption p{
+    font-size: 50px !important;
+    line-height: 1.35 !important;
+  }
+
+    .caption .arrow {
+    width: 100px;
+    height: 100px;
+  }
+
+    .caption .arrow::before {
+    width: 10px;
+  }
+
+  .caption .arrow::after {
+    width: 30px;
+    height: 30px;
+    border-right: 10px solid #ffffff;
+    border-bottom: 10px solid #ffffff;
+}
+
+    .top-nav > ul > li > a{
+    font-size: 27px !important;
+    letter-spacing: 0.05em !important;
+    line-height: 1.15 !important;
+  }
+
+    .top-nav > ul{
+    gap: 52px; 
+  }
+
+    .top-nav > ul > li > a::after{
+    background: #ffffff !important; 
+    height: 5px !important;      
+    bottom: -7px !important;    
+  }
+
+   .top-nav > ul > li:not(.login-item):not(.lang-item){
+    transform: translateY(13px);
+  }
+  
+
+    /* BOTÃO - LOGIN */
+    .top-nav > ul > li > a.login-btn{
+    font-size: 23px !important;
+    padding: 37px 40px !important;
+    line-height: 1 !important;
+  }
+
+
+    /* BOTÃO - IDIOMA */
+    .top-nav > ul > li.lang-item .lang-current{
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    font-size: 43px !important;
+    padding: 37px 40px !important;
+    line-height: 1 !important;
+    min-height: 46px !important;
+  }
+
+    .top-nav > ul > li.lang-item .lang-flag{
+    width: 43px !important;
+    height: 27px !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+
+    .top-nav > ul > li.lang-item .lang-code{
+    font-size: 25px !important;
+    letter-spacing: .08em !important;
+  }
+
+    .top-nav .lang-dropdown{
+    width: 560px !important;
+    padding: 26px !important;
+  }
+
+    .top-nav .lang-dropdown .lang-search-input{
+    width: 100% !important;
+    margin: 0 0 10px 0 !important;
+  }
+
+    .top-nav .lang-dropdown .lang-list{
+    max-height: 330px !important;
+    overflow-y: auto !important;
+
+    margin-right: -16px !important;   
+    padding-right: 0 !important;
+  }
+
+    .top-nav .lang-dropdown .lang-list li a{
+    padding-right: 16px !important;  
+  }
+
+    .top-nav .lang-dropdown .lang-list::-webkit-scrollbar{ width: 12px; }
+    .top-nav .lang-dropdown .lang-list::-webkit-scrollbar-track{ background: transparent; }
+    .top-nav .lang-dropdown .lang-list::-webkit-scrollbar-thumb{
+    background: rgba(255,255,255,0.30);
+  }
+
+
+    .top-nav > ul > li.lang-item .lang-arrow{
+    width: 15px;
+    height: 15px;
+    border-right: 4px solid #ffffff;
+    border-bottom: 4px solid #ffffff;
+    transform: rotate(-135deg);
+    transition: transform .18s ease, border-color .18s ease;
+    opacity: .7;
+    margin-top: -1px;
+  }
+
+  .top-nav > ul > li.lang-item .lang-switcher.is-open .lang-arrow{
+    transform: rotate(45deg);
+    border-color: #ffffff;
+    opacity: 1;
+}
+
+    .lang-dropdown{
+    width: 450px !important;
+    padding: 16px !important;
+  }
+  
+    .lang-search-input{
+    box-sizing: border-box !important;
+    height: 88px !important;
+   
+    padding-left: 60px !important;
+    padding-right: 60px !important;     
+    font-size: 30px !important;
+
+    border: 2px solid rgba(255,255,255,0.18) !important;
+    background-color: rgba(0,0,0,0.75) !important;
+
+    background-image:
+    url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='11' cy='11' r='6' stroke='%23BBBBBB' stroke-width='2'/%3E%3Cline x1='15.5' y1='15.5' x2='20' y2='20' stroke='%23BBBBBB' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat !important;
+    background-position: 25px center !important;
+    background-size: 26px 26px !important;
+
+    color: #ffffff !important;
+    outline: none !important;
+  }
+
+    .lang-search-input:focus{
+    border-color: #e42323 !important;
+    background-image:
+    url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='11' cy='11' r='6' stroke='%23FFFFFF' stroke-width='2'/%3E%3Cline x1='15.5' y1='15.5' x2='20' y2='20' stroke='%23FFFFFF' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") !important;
+  }
+
+    .lang-menu{
+    max-height: 550px !important;   
+    overflow-y: auto !important;
+    padding-right: 6px;
+  }
+  
+
+    .lang-menu li a{
+    display: flex;
+    align-items: center !important;
+    gap: 16px !important;
+
+    font-size: 40px !important;
+    padding: 20px 20px !important;
+  }
+
+    .lang-menu li::after{
+    height: 4px;              
+  }
+
+  .lang-menu .lang-flag{
+    width: 75px !important;
+    height: 55px !important;
+    object-fit: cover !important;
+    flex-shrink: 0;
+  }
+
+  .lang-menu span{
+    font-size: 28px !important;
+    letter-spacing: .04em;
+}
+
+
+.pagination {
+    position: absolute;
+    right: 71px;
+    bottom: 90px;
+    display: flex;
+    gap: 10px;
+}
+
+.pagination .dot {
+    width: 40px;
+    height: 5px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, .55);
+}
+
+
+/* RODAPÉ */
+
+.site-footer{
+  padding-top: 240px !important;
+  padding-bottom: 90px !important;
+  padding-left: calc(var(--rail) + 120px) !important;
+  padding-right: 700px !important;
+}
+
+.site-footer .footer-col-right{
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.site-footer .footer-col-right p{
+  width: 150% !important;        
+  max-width: none !important;    
+}
+
+
+.footer-inner{
+  max-width: 2800px !important;
+}
+
+/* grid principal */
+.footer-contact-block{
+  
+  column-gap: 180px !important;
+}
+
+/* esquerda */
+.footer-kicker{
+  font-size: 30px !important;
+  margin-bottom: 40px !important;
+}
+
+.footer-title{
+  font-size: 140px !important;
+  margin-bottom: 70px !important;
+}
+
+.footer-address p{
+  font-size: 31px !important;
+  line-height: 1.9 !important;
+  margin-bottom: 44px !important;
+}
+
+/* direita */
+.footer-col-right{
+  margin-top: 140px !important;
+}
+
+.footer-col-right p{
+  font-size: 32px !important;
+  line-height: 2 !important;
+  margin-bottom: 20px !important;
+}
+
+/* botão */
+.footer-cta{
+  padding: 10px 100px !important;
+  border-width: 3px !important;
+  font-size: 26px !important;
+  letter-spacing: .16em !important;
+  gap: 18px !important;
+  margin-top: 40px !important;
+}
+
+.footer-cta-arrow{
+  font-size: 50px !important;
+  padding-bottom: 10px;
+}
+
+/* linha inferior */
+.footer-bottom{
+  margin-top: 140px !important;
+  padding-top: 26px !important;
+  font-size: 25px !important;
+}
+
+.footer-bottom::before{
+  height: 2px !important;
+  left: -140px !important;
+  right: -180px !important;
+}
+
+.footer-bottom-left{
+  gap: 34px !important;
+  font-size: 23px !important;
+  margin-left: -120px !important;
+  padding-top: 30px !important;
+}
+
+.footer-mini-logo{
+  height: 140px !important;
+}
+
+/* links */
+.footer-link{
+  font-size: 23px !important;
+}
+
+/* direita (logo + social) */
+.footer-bottom-right{
+  gap: 280px !important;
+  margin-right: -180px !important;
+  padding-top: 70px !important;
+  font-size: 30px !important;
+}
+
+.footer-design-logo{
+  height: 110px !important;
+}
+
+.footer-design-caption{
+  font-size: 20px !important;
+  letter-spacing: .16em !important;
+  font-weight: 700;
+}
+
+.footer-social{
+  gap: 26px !important;
+  margin-right: -10px !important;
+  margin-top: 10px !important;
+}
+
+.footer-social-link{
+  font-size: 42px !important;
+}
+
+.site-footer .footer-design,
+.site-footer .footer-social{
+  position: relative !important;
+  right: -80px !important;
+}
+
+.site-footer .footer-social{
+  transform: translateX(-35px) !important;  
+}
+
+
+
+  /* ============================
+     4K – OUTRAS PÁGINAS (não Home)
+  ============================ */
+
+  body:not(.page-index){
+    --rail: 520px;       /* mais espaço para o logo à esquerda */
+    --nav-top: 92px;     /* desce o menu */
+  }
+
+  body:not(.page-index) .left-rail{
+    width: var(--rail) !important;
+    padding-top: 52px !important;
+    padding-right: 90px !important;
+  }
+
+  body:not(.page-index) .left-rail .brand img{
+    height: 140px !important;   /* logo maior e equilibrado */
+  }
+
+  body:not(.page-index) .top-nav{
+    top: var(--nav-top) !important;
+    left: calc(var(--rail) + 40px) !important;
+    right: 140px !important;
+  }
+
+  body:not(.page-index) .top-nav > ul{
+    gap: 56px !important;
+  }
+
+  body:not(.page-index) .top-nav > ul > li > a{
+    font-size: 20px !important;
+    letter-spacing: .07em !important;
+  }
+
+  body:not(.page-index) .top-nav > ul > li > a::after{
+    height: 3px !important;
+    bottom: -4px !important;
+  }
+
+  body:not(.page-index) .page{
+    padding-left: calc(var(--rail) + 40px) !important;
+    padding-top: 130px !important;
+  }
+
+.btn-topo-header{
+
+  width: 70px;
+  height: 70px;
+
+}
+
+.btn-topo-header i{
+  font-size: 27px;
+  line-height: 1;
+}
+
+
+
+}
+
+
+
+
+
+
+
+

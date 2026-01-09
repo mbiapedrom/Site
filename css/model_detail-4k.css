@@ -1,0 +1,307 @@
+/* ================================
+    CABECALHO PÁGINAS MENOS INDEX
+   ================================ */
+
+@media (min-width: 1367px){
+
+  
+
+  :root{
+    --header-h: 250px;     /* altura da barra preta */
+    --rail: 520px;         /* “coluna” do logo */
+    --nav-top: 88px;       /* posição vertical do menu (ajusta fino se precisares) */
+
+    --nav-gap: 44px;
+    --underline-h: 4px;
+  }
+
+
+  body.page-model_detail::before{
+    content:"";
+    position: absolute !important;
+    top:0; left:0; right:0;
+    height: var(--header-h);
+    background:#262626;
+    z-index:150;
+  }
+
+
+  body.page-model_detail .left-rail{
+    position: absolute !important;
+    top:0 !important;
+    left:0 !important;
+    bottom:auto !important;
+
+    height: var(--header-h) !important;
+    width: var(--rail) !important;
+
+    background: transparent !important;
+
+    display:flex !important;
+    align-items:center !important;
+    justify-content:flex-start !important;
+
+    padding: 0 !important;
+    z-index:300 !important;
+
+    overflow: visible !important;
+    min-height: 0 !important;
+  }
+
+  /* Logo MAIS à esquerda (sem desaparecer) */
+  body.page-model_detail .left-rail .brand{
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    display: block !important;
+  }
+
+  body.page-model_detail .left-rail .brand img{
+    display:block !important;
+    height: 200px !important;
+    width: auto !important;
+    margin-left: 0 !important;
+  }
+
+ 
+  body.page-model_detail .top-nav{
+    position: absolute !important;
+    top: var(--nav-top) !important;
+    left: calc(var(--rail) + 40px) !important;
+    right: 90px !important;
+    z-index: 310 !important;
+  }
+
+
+  body.page-model_detail .top-nav > ul{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:flex-end !important;
+
+    gap: var(--nav-gap) !important;
+    margin:0 !important;
+    padding:0 !important;
+    list-style:none !important;
+  }
+
+  /* Aumentar SÓ os links (exclui LOGIN e idioma) */
+  body.page-model_detail .top-nav > ul > li:not(.login-item):not(.lang-item) > a{
+    position: relative !important;
+    display: inline-block !important;
+
+    font-size: 27px !important;     /* aumenta os links */
+    line-height: 1 !important;
+    padding-bottom: 2px !important; /* dá espaço para a underline */
+  }
+
+  /* underline mais grossa só para links do menu */
+  body.page-model_detail .top-nav > ul > li:not(.login-item):not(.lang-item) > a::after{
+    height: var(--underline-h) !important;
+    bottom: -4px !important;
+  }
+
+  /* SERVICES ativo vermelho (links do menu) */
+  body.page-model_detail .top-nav > ul > li:not(.login-item):not(.lang-item) > a.active{
+    color:#e42323 !important;
+  }
+  body.page-model_detail .top-nav > ul > li:not(.login-item):not(.lang-item) > a.active::after{
+    background:#e42323 !important;
+    animation:none !important;
+    transform:scaleX(1) !important;
+  }
+
+  /* Subir só os itens do menu (não mexe nos botões) — foi o que funcionou contigo */
+  body.page-model_detail .top-nav > ul > li:not(.login-item):not(.lang-item){
+    transform: translateY(-8px) !important; /* ajusta -8 / -12 se precisares */
+  }
+
+
+  body.page-model_detail .top-nav .login-btn,
+  body.page-model_detail .top-nav > ul > li.lang-item .lang-current{
+    padding: 0 40px !important;
+    height: 85px !important;
+    font-size: 25px !important;
+
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    line-height: 1 !important;
+  }
+
+      .top-nav .lang-dropdown .lang-list{
+    max-height: 300px !important;
+    overflow-y: auto !important;
+
+    margin-right: -16px !important;   
+    padding-right: 0 !important;
+  }
+
+  /* não deixar underline do menu nestes botões */
+  body.page-model_detail .top-nav .login-btn::after,
+  body.page-model_detail .top-nav .lang-current::after{
+    content: none !important;
+    display: none !important;
+  }
+
+ 
+  body.page-model_detail .page{
+    padding-top: calc(var(--header-h) + 40px) !important;
+    padding-left: calc(var(--rail) + 40px) !important;
+  }
+
+  /* Puxa a imagem para a esquerda (porque o PNG tem espaço transparente) */
+  body.page-model_detail .left-rail .brand img{
+  transform: translateX(-170px) !important;  /* testa -30 / -45 / -60 */
+}
+
+    /* ================================
+            RESTO DA PÁGINA
+   ================================ */
+
+  :root{
+    --page-bg-model-detail: #ffffff;
+  }
+
+  html{ overflow-x: hidden; }
+
+  /* FUNDO + TIPOGRAFIA GERAL */
+  body.page-model_detail{
+    background: linear-gradient(
+      #262626 0 170px,
+      var(--page-bg-model-detail) 150px 100%
+    );
+    color: #444444;
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI",
+                 Roboto, sans-serif;
+  }
+
+  /* barra esquerda branca */
+  body.page-model_detail .left-rail{
+    bottom: auto;
+    height: auto;
+    justify-content: flex-start;
+    padding-left: 55px;
+    padding-right: 0;
+  }
+
+  /* wrapper principal */
+  .model-detail-page{
+    padding-top: 430px;     /* + espaço por causa do header 4K */
+    padding-bottom: 0;
+  }
+
+  /* ===== TÍTULO ===== */
+
+  .model-detail-hero{
+    padding-left: var(--rail);
+    padding-right: 180px;
+  }
+
+  .model-detail-title{
+    margin: 0 0 110px;
+    max-width: 1400px;     /* mais largo */
+    font-size: 110px;       /* maior */
+    line-height: 1.05;
+    font-weight: 700;
+    color: #3f3f3f;
+  }
+
+  /* ===== IMAGEM GRANDE ===== */
+
+  .model-detail-main-image{
+    padding-left: var(--rail);
+    padding-right: 180px;
+    margin-bottom: 180px;
+  }
+
+  .model-detail-main-image-inner{
+    max-width: 1600px;     /* imagem maior */
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  .model-detail-main-image-inner img{
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* ===== TEXTO EXPLICATIVO ===== */
+
+  .model-detail-description{
+    padding-left: calc(var(--rail) + 60px);
+    padding-right: 180px;
+    margin-bottom: 220px;
+    margin-top: -10px;
+  }
+
+  .model-detail-description-inner{
+    max-width: 1100px;     /* mais largo */
+    margin: 0;
+    text-align: center;
+  }
+
+  .model-detail-description-inner p{
+    margin: 0;
+    font-size: 33px;       /* maior */
+    line-height: 2.0;
+    color: #666666;
+    font-weight: 300;
+  }
+
+  /* ===== BLOCO "NEXT PROJECT" ===== */
+
+  .model-detail-next{
+    background: #f1f1f1;
+    padding: 210px 0 260px;     /* mais alto */
+  }
+
+  .model-detail-next-inner{
+    padding-right: 180px;
+    padding-left: 220px;        /* empurra o bloco para a direita */
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); /* imagem ganha mais */
+    column-gap: 160px;          /* mais respiro */
+    align-items: center;
+  }
+
+  .model-detail-next-kicker{
+    margin: 0 0 36px;
+    font-size: 33px;            /* maior */
+    font-weight: 600;
+    letter-spacing: .03em;
+    color: #666666;
+  }
+
+  .model-detail-next-title{
+    margin: 0;
+    max-width: 820px;
+    font-size: 95px;            /* maior */
+    line-height: 1.06;
+    font-weight: 700;
+    color: #333333;
+  }
+
+  /* imagem do lado direito */
+  .model-detail-next-image{
+    display: block;
+    margin-top: 40px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;         /* opcional, fica mais “clean” */
+  }
+
+  .model-detail-next-image img{
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: opacity .35s ease, transform .35s ease;
+    cursor: pointer;
+  }
+
+  .model-detail-next-image:hover img{
+    opacity: 0.65;
+    transform: scale(1.03);
+  }
+
+}

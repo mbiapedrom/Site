@@ -1,0 +1,255 @@
+@media (min-width: 768px) and (max-width: 1199px) {
+
+.mobile-topbar{
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+  height: 10px !important;  
+  box-shadow: none !important;
+}
+
+body.menu-open{
+  overflow: hidden !important;
+  height: 100vh !important;
+}
+
+
+
+.mobile-logo img{ height: 120px; width: auto; }
+
+.mobile-menu-btn{
+    left: 14px;
+    top: 100px;
+    width: 80px;
+    height: 80px;
+  }
+
+    .mobile-login{
+    left: 18px;
+    top: 14px;
+    padding: 16px 22px;
+    font-size: 15px;
+  }
+
+  .mobile-topbar .lang-current{
+    padding: 16px 24px !important;
+    font-size: 15px !important;
+    height: 50px !important;
+  }
+
+    .mobile-topbar .lang-flag{
+    width: 21px !important;
+    height: 21px !important;
+  }
+
+    .lang-code{
+    font-size: 16px;
+  }
+
+  
+  body.page-sobre .left-rail{
+    display: none !important;
+  }
+
+  /* PAGE */
+  body.page-sobre .about-page{
+    padding-top: 70px !important;   /* antes 300 */
+    padding-bottom: 0 !important;
+  }
+
+  /* ==========================================================
+     HERO
+     ========================================================== */
+
+  body.page-sobre .about-hero{
+    padding-left: var(--pad) !important;
+    padding-right: var(--pad) !important;
+  }
+
+  body.page-sobre .about-title{
+    margin: 10px 0 14px !important;
+    font-size: 34px !important;
+    line-height: 1.1 !important;
+    margin-left: 0 !important; /* mata -150px */
+    transform: none !important;
+  }
+
+  /* ==========================================================
+     VIDEO
+     ========================================================== */
+
+  body.page-sobre .about-hero-video{
+    margin-top: 14px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    background: #ffffff !important;
+  }
+
+  body.page-sobre .about-hero-video-inner{
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 var(--pad) !important;
+  }
+
+  body.page-sobre .about-video{
+    width: 100% !important;
+    margin: 0 !important;
+    border-radius: 14px !important;
+    overflow: hidden !important;
+    background: #262626 !important;
+  }
+
+  /* ==========================================================
+     INTRO
+     ========================================================== */
+
+  body.page-sobre .about-intro{
+    padding-top: 26px !important;
+    padding-bottom: 10px !important;
+  }
+
+  body.page-sobre .about-intro-inner{
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 var(--pad) !important;
+
+    font-size: 14px !important;
+    line-height: 1.75 !important;
+    color: #555 !important;
+  }
+
+  /* ==========================================================
+     BLOCO GENÉRICO (MISSION / SOLUTION / ETC)
+     ========================================================== */
+
+  body.page-sobre .about-block{
+    padding-top: 26px !important;
+    padding-bottom: 16px !important;
+  }
+
+  body.page-sobre .about-block-inner{
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 var(--pad) !important;
+    transform: none !important; /* mata translate */
+  }
+
+  body.page-sobre .about-block-title{
+    margin: 0 0 10px !important;
+    font-size: 22px !important;
+    line-height: 1.25 !important;
+  }
+
+  body.page-sobre .about-block p{
+    font-size: 14px !important;
+    line-height: 1.75 !important;
+    margin: 0 !important;
+    color: #555 !important;
+  }
+
+  /* MISSION (remove offsets desktop) */
+  body.page-sobre .about-mission{
+    padding-left: 0 !important;
+  }
+
+  body.page-sobre .about-mission .about-block-inner{
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  /* SOLUTION (limpo e consistente) */
+  body.page-sobre .about-solution{
+    padding: 26px var(--pad) 100px !important;
+    margin: 0 !important;
+  }
+
+  body.page-sobre .about-solution .about-block-inner{
+    transform: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: none !important;
+  }
+
+  body.page-sobre .about-solution,
+  body.page-sobre .about-solution p{
+    color: #555 !important;
+  }
+
+  /* ==========================================================
+     IMAGEM ENTRE TEXTOS
+     ========================================================== */
+
+  body.page-sobre .about-image-block{
+    padding-top: 12px !important;
+    padding-bottom: 22px !important;
+  }
+
+  body.page-sobre .about-image-inner{
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 var(--pad) !important;
+  }
+
+  body.page-sobre .about-image-inner img{
+    width: 100% !important;
+    height: 260px !important;       /* ajusta: 220 / 260 / 300 */
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: 14px !important;
+    display: block !important;
+  }
+
+  /* ==========================================================
+     TEAM
+     ========================================================== */
+
+  body.page-sobre .about-team{
+    padding-top: 34px !important;
+    padding-bottom: 44px !important;
+    background: #f6f6f6 !important;
+  }
+
+  body.page-sobre .about-team-inner{
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 var(--pad) !important;
+  }
+
+  body.page-sobre .about-team-title{
+    margin: 0 0 18px !important;
+    font-size: 24px !important;
+    line-height: 1.2 !important;
+  }
+
+   body.page-sobre .about-team-grid{
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important; /* 🔑 2 colunas */
+    gap: 24px !important;
+  }
+
+  /* cards ocupam a coluna inteira */
+  body.page-sobre .team-card{
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  /* imagens mais equilibradas */
+ body.page-sobre .team-card img{
+    width: 100% !important;
+
+    aspect-ratio: 1 / 1 !important;   /* 🔑 mais baixo (quadrado) */
+
+    max-height: 240px !important;     /* 🔑 trava crescimento */
+    object-fit: cover !important;
+
+    border-radius: none !important;
+    margin-bottom: 10px !important;
+  }
+
+  body.page-sobre .team-name{
+    font-size: 15px !important;
+  }
+
+  body.page-sobre .team-role{
+    font-size: 13px !important;
+  }
+}

@@ -1,0 +1,118 @@
+  @media (max-width: 767px) {
+  
+  .mobile-topbar{
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+  height: 20px !important;  
+  box-shadow: none !important;
+}
+
+body.page-model_detail .left-rail{
+  display: none !important;
+}
+
+body.page-model_detail .model-detail-page{
+  padding-top: 70px !important;
+  padding-bottom: 0 !important;
+}
+
+/* HERO */
+body.page-model_detail .model-detail-hero{
+  padding-left: var(--pad) !important;
+  padding-right: var(--pad) !important;
+}
+
+body.page-model_detail .model-detail-title{
+  margin: 10px 0 18px !important;
+  font-size: 34px !important;
+  line-height: 1.1 !important;
+  max-width: none !important;
+}
+
+/* IMAGEM GRANDE */
+body.page-model_detail .model-detail-main-image{
+  padding-left: var(--pad) !important;
+  padding-right: var(--pad) !important;
+  margin-bottom: 26px !important;
+}
+
+body.page-model_detail .model-detail-main-image-inner{
+  max-width: 100% !important; 
+  margin-left: 150px !important;
+}
+
+body.page-model_detail .model-detail-main-image-inner img{
+  border-radius: 14px !important;
+  display: block !important;
+}
+
+/* TEXTO */
+body.page-model_detail .model-detail-description{
+  padding-left: var(--pad) !important;
+  padding-right: var(--pad) !important;
+  margin: 0 0 48px 0 !important;
+  margin-top: 0 !important;
+}
+
+body.page-model_detail .model-detail-description-inner{
+  max-width: none !important;
+  text-align: left !important;
+}
+
+body.page-model_detail .model-detail-description-inner p{
+  font-size: 14px !important;
+  line-height: 1.75 !important;
+}
+
+/* NEXT PROJECT — 2 colunas -> 1 */
+body.page-model_detail .model-detail-next{
+     background: #f1f1f1 !important;
+
+    width: 100vw !important;
+    padding-bottom: 20vw !important;
+    padding-top: 20vw !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    
+}
+
+body.page-model_detail .model-detail-next-inner{
+  padding-left: var(--pad) !important;
+  padding-right: var(--pad) !important;
+
+  display: block !important;     /* 🔑 mata o grid */
+}
+
+body.page-model_detail .model-detail-next-kicker{
+  font-size: 14px !important;
+  margin: 0 0 10px !important;
+}
+
+body.page-model_detail .model-detail-next-title{
+  font-size: 28px !important;
+  line-height: 1.15 !important;
+  margin: 0 0 16px !important;
+}
+
+/* imagem por baixo */
+body.page-model_detail .model-detail-next-image{
+  max-width: 100% !important;   
+  margin-left: 0 !important;   
+  margin-right: auto !important;
+}
+
+body.page-model_detail .model-detail-next-image img{
+  border-radius: 14px !important;
+}
+
+/* no mobile não há hover real — evita “ficar preso” */
+@media (hover: none){
+  body.page-model_detail .model-detail-next-image:hover img{
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+  }
